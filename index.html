@@ -1,226 +1,722 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Bala Sundar | Data Analyst Portfolio</title>
+    <title>Bala Sundar | Data Analyst Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
-```
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #111827;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+            background: linear-gradient(135deg, #111827, #1e3a8a);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #e5e7eb;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 8px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #111827;
+        }
+
+        .primary:hover {
+            background: white;
+        }
+
+        .secondary {
+            border: 2px solid #38bdf8;
+            color: white;
+        }
+
+        .secondary:hover {
+            background: #38bdf8;
+            color: #111827;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 45px;
+            color: #111827;
+        }
+
+        .section-title span {
+            color: #2563eb;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+            color: #555;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            background: #f5f7fb;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .skill {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            background: white;
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border-top: 5px solid #2563eb;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-number {
+            color: #2563eb;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        .project-card p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .tech {
+            margin: 15px 0;
+        }
+
+        .tech span {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 5px 10px;
+            margin: 3px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .project-btn {
+            display: inline-block;
+            margin-top: 15px;
+            background: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 7px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .project-btn:hover {
+            background: #1e40af;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact p {
+            margin: 15px 0;
+            color: #d1d5db;
+            font-size: 17px;
+        }
+
+        .contact a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-buttons {
+            margin-top: 25px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #030712;
+            color: #9ca3af;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-```
-<!-- Home -->
-<header id="home">
 
-    <h1>Bala Sundar</h1>
+    <!-- ================= NAVBAR ================= -->
 
-    <p>
-        Data Analyst | SQL | Python | Power BI | QA Testing
-    </p>
+    <nav>
 
-    <a class="button" href="#projects">
-        View My Projects
-    </a>
+        <div class="logo">
+            Bala Sundar
+        </div>
 
-</header>
+        <ul>
 
+            <li>
+                <a href="#home">Home</a>
+            </li>
 
-<!-- About -->
-<section id="about">
+            <li>
+                <a href="#about">About</a>
+            </li>
 
-    <h2>About Me</h2>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
 
-    <p>
-        I am an aspiring Data Analyst interested in transforming
-        data into meaningful insights. I work with SQL, Python,
-        Power BI and Excel, and I also have an interest in software
-        testing and quality assurance.
-    </p>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
 
-</section>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
 
+        </ul>
 
-<!-- Skills -->
-<section id="skills">
-
-    <h2>Skills</h2>
-
-    <div class="skills">
-
-        <div class="skill">SQL</div>
-        <div class="skill">Python</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Excel</div>
-        <div class="skill">MySQL</div>
-        <div class="skill">Manual Testing</div>
-        <div class="skill">QA Testing</div>
-        <div class="skill">GitHub</div>
-
-    </div>
-
-</section>
+    </nav>
 
 
-<!-- Projects -->
+    <!-- ================= HOME ================= -->
 
-            <!-- Projects -->
-<section id="projects">
+    <section class="hero" id="home">
 
-    <h2>Projects</h2>
+        <div class="hero-content">
 
-    <div class="projects">
+            <h1>
+                Hi, I'm Bala Sundar 👋
+            </h1>
 
-        <!-- Project 1 -->
-    <!-- Projects -->
-<section id="projects">
-
-    <h2>Projects</h2>
-
-    <div class="projects">
-
-        <!-- Project 1 -->
-        <div class="project">
-
-            <h3>🏪 Supermarket Sales Analysis</h3>
+            <h2>
+                Data Analyst
+            </h2>
 
             <p>
-                Analyzed supermarket sales data using SQL and
-                Power BI to identify sales trends, customer
-                behavior, product performance and business insights.
+                Aspiring Data Analyst passionate about transforming raw data
+                into meaningful insights using SQL, Excel, Power BI and
+                data visualization.
             </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about-content">
 
             <p>
-                <strong>Technologies:</strong>
-                MySQL, SQL, Power BI and Excel
+                I am an aspiring Data Analyst with an interest in data
+                analysis, business intelligence and problem solving.
+                I enjoy working with datasets, finding patterns and
+                creating meaningful insights that can support better
+                business decisions.
             </p>
 
-            <a class="button"
-               href="https://github.com/balasundar2005"
-               target="_blank">
-                View Project
+            <br>
+
+            <p>
+                I have worked on projects involving supermarket sales,
+                retail sales analysis and a Blood Matching Portal.
+                I am continuously improving my technical and analytical
+                skills.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section class="skills" id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                SQL
+            </div>
+
+            <div class="skill">
+                Excel
+            </div>
+
+            <div class="skill">
+                Power BI
+            </div>
+
+            <div class="skill">
+                Python
+            </div>
+
+            <div class="skill">
+                Data Analysis
+            </div>
+
+            <div class="skill">
+                Data Visualization
+            </div>
+
+            <div class="skill">
+                MySQL
+            </div>
+
+            <div class="skill">
+                GitHub
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section class="projects" id="projects">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="project-container">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    🛒 Supermarket Sales Analysis
+                </h3>
+
+                <p>
+                    An end-to-end data analytics project analyzing
+                    supermarket transactions to identify revenue,
+                    profitability, customer behavior, product performance,
+                    branch performance and payment trends.
+                </p>
+
+                <div class="tech">
+
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>MySQL</span>
+                    <span>Power BI</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/balasundar2005/supermarket-sales-analysis"
+                    class="project-btn"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    🛍️ Retail Sales Analysis
+                </h3>
+
+                <p>
+                    A retail sales analysis project using MySQL and
+                    Power BI to understand sales performance, customer
+                    behavior, product category performance, monthly
+                    revenue trends and top customers.
+                </p>
+
+                <div class="tech">
+
+                    <span>MySQL</span>
+                    <span>SQL</span>
+                    <span>Power BI</span>
+                    <span>Excel</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/balasundar2005/retail-sales-analysis"
+                    class="project-btn"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    🩸 Blood Matching Portal
+                </h3>
+
+                <p>
+                    A web-based Blood Matching Portal designed to help
+                    users find nearby blood banks where the required
+                    blood group is available. The project focuses on
+                    improving access to blood availability information.
+                </p>
+
+                <div class="tech">
+
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>Express.js</span>
+                    <span>PostgreSQL</span>
+                    <span>Google Maps API</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/balasundar2005/blood-harmony-pro"
+                    class="project-btn"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Contact <span>Me</span>
+        </h2>
+
+        <p>
+            Interested in working together or discussing a project?
+        </p>
+
+
+        <p>
+            📧 Email:
+            <a href="mailto:balasundarsenthil@gmail.com">
+                balasundarsenthil@gmail.com
+            </a>
+        </p>
+
+
+        <p>
+            📱 Phone:
+            <a href="tel:+919080374685">
+                +91 9080374685
+            </a>
+        </p>
+
+
+        <p>
+            💻 GitHub:
+            <a
+                href="https://github.com/balasundar2005"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                github.com/balasundar2005
+
+            </a>
+        </p>
+
+
+        <p>
+            🔗 LinkedIn:
+            <a
+                href="https://www.linkedin.com/in/balasundar-s-890669259?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Bala Sundar on LinkedIn
+
+            </a>
+        </p>
+
+
+        <div class="contact-buttons">
+
+            <a href="mailto:balasundarsenthil@gmail.com"
+               class="btn primary">
+
+                Email Me
+
+            </a>
+
+            <a href="#home"
+               class="btn secondary">
+
+                Back to Top ↑
+
             </a>
 
         </div>
 
-
-        <!-- Project 2 -->
-        <div class="project">
-
-            <h3>🛒 Retail Sales Analysis</h3>
-
-            <p>
-                Analyzed retail sales data using SQL and Power BI
-                to identify sales trends, customer behavior,
-                product performance and business insights.
-            </p>
-
-            <p>
-                <strong>Technologies:</strong>
-                MySQL, SQL, Power BI and Excel
-            </p>
-
-            <a class="button"
-               href="https://github.com/balasundar2005"
-               target="_blank">
-                View Project
-            </a>
-
-        </div>
+    </section>
 
 
-        <!-- Project 3 -->
-        <div class="project">
+    <!-- ================= FOOTER ================= -->
 
-            <h3>🩸 Blood Matching Portal</h3>
+    <footer>
 
-            <p>
-                A web-based Blood Matching Portal that helps users
-                find nearby blood banks where the required blood
-                group is available.
-            </p>
+        <p>
+            © 2026 Bala Sundar | Data Analyst Portfolio
+        </p>
 
-            <p>
-                <strong>Technologies:</strong>
-                React, HTML, CSS, Node.js, Express.js,
-                PostgreSQL and Google Maps API
-            </p>
+    </footer>
 
-            <a class="button"
-               href="https://github.com/balasundar2005"
-               target="_blank">
-                View Project
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-</section>
-
-
-<!-- Resume -->
-<section id="resume">
-
-    <h2>Resume</h2>
-
-    <p>
-        View my resume to learn more about my education,
-        skills, internship and projects.
-    </p>
-
-    <a class="button"
-       href="resume.pdf"
-       target="_blank">
-        View Resume
-    </a>
-
-</section>
-
-
-<!-- Contact -->
-<section id="contact">
-
-    <h2>+91 9080374685/h2>
-
-    <p>
-        Email: balasundarsenthil@gmail.com
-    </p>
-
-    <br>
-
-    <a class="button"
-       href="https://www.linkedin.com/"
-       target="_blank">
-        LinkedIn
-    </a>
-
-    <a class="button"
-       href="https://github.com/balasundar2005"
-       target="_blank">
-        GitHub
-    </a>
-
-</section>
-
-
-<!-- Footer -->
-<footer>
-
-    <p>
-        © 2026 BalaSundar. All Rights Reserved.
-    </p>
-
-</footer>
-```
 
 </body>
+
 </html>
+```
