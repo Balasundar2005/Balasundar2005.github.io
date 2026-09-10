@@ -1,34 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bala Sundar | Data Analyst Portfolio</title>
 
-    <meta name="description"
-          content="Bala Sundar - Aspiring Data Analyst Portfolio">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-
     <style>
-
-        /* =========================
-           RESET
-        ========================= */
-
         * {
             margin: 0;
             padding: 0;
@@ -36,1140 +14,527 @@
             scroll-behavior: smooth;
         }
 
-
         body {
-            font-family: "Inter", sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
             line-height: 1.6;
         }
 
-
-        a {
-            text-decoration: none;
-        }
-
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        nav {
+        header {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
+            background: #020617;
+            padding: 18px 8%;
             z-index: 1000;
-
-            background: rgba(255, 255, 255, 0.96);
-
-            backdrop-filter: blur(10px);
-
-            border-bottom: 1px solid #e2e8f0;
         }
 
-
-        .nav-container {
-            max-width: 1150px;
-            margin: auto;
-
-            padding: 18px 25px;
-
+        nav {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
         }
-
 
         .logo {
-            font-size: 23px;
-            font-weight: 800;
-            color: #2563eb;
+            color: #38bdf8;
+            font-size: 24px;
+            font-weight: bold;
         }
 
-
-        .nav-links {
+        nav ul {
             display: flex;
-            align-items: center;
-            gap: 24px;
-
             list-style: none;
-        }
-
-
-        .nav-links a {
-            color: #334155;
-            font-size: 14px;
-            font-weight: 600;
-
-            transition: 0.3s;
-        }
-
-
-        .nav-links a:hover {
-            color: #2563eb;
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 120px 25px 70px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #eff6ff 0%,
-                    #ffffff 55%,
-                    #f8fafc 100%
-                );
-        }
-
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-
-        .hero-small {
-            color: #2563eb;
-
-            font-size: 16px;
-            font-weight: 700;
-
-            margin-bottom: 12px;
-        }
-
-
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 75px);
-
-            line-height: 1.05;
-
-            font-weight: 800;
-
-            color: #0f172a;
-        }
-
-
-        .hero h1 span {
-            color: #2563eb;
-        }
-
-
-        .hero h2 {
-            margin-top: 18px;
-
-            font-size: 27px;
-
-            color: #475569;
-        }
-
-
-        .hero p {
-            max-width: 700px;
-
-            margin: 20px auto;
-
-            color: #64748b;
-
-            font-size: 17px;
-        }
-
-
-        .buttons {
-            margin-top: 30px;
-
-            display: flex;
-            justify-content: center;
-
-            gap: 14px;
-
-            flex-wrap: wrap;
-        }
-
-
-        .btn {
-            display: inline-block;
-
-            padding: 13px 23px;
-
-            border-radius: 8px;
-
-            font-weight: 700;
-
-            transition: 0.3s;
-        }
-
-
-        .btn-primary {
-            color: white;
-            background: #2563eb;
-        }
-
-
-        .btn-primary:hover {
-            background: #1d4ed8;
-
-            transform: translateY(-2px);
-        }
-
-
-        .btn-secondary {
-            color: #2563eb;
-
-            background: white;
-
-            border: 2px solid #2563eb;
-        }
-
-
-        .btn-secondary:hover {
-            background: #eff6ff;
-        }
-
-
-        /* =========================
-           SECTIONS
-        ========================= */
-
-        section {
-            max-width: 1150px;
-
-            margin: auto;
-
-            padding: 90px 25px;
-        }
-
-
-        .section-title {
-            text-align: center;
-
-            margin-bottom: 50px;
-        }
-
-
-        .section-title h2 {
-            font-size: 36px;
-
-            color: #0f172a;
-
-            margin-bottom: 10px;
-        }
-
-
-        .section-title p {
-            color: #64748b;
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about-grid {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 40px;
-
-            align-items: center;
-        }
-
-
-        .about-text h3 {
-            font-size: 27px;
-
-            color: #0f172a;
-
-            margin-bottom: 15px;
-        }
-
-
-        .about-text p {
-            color: #64748b;
-
-            margin-bottom: 15px;
-        }
-
-
-        .about-card {
-            background: white;
-
-            padding: 30px;
-
-            border-radius: 15px;
-
-            box-shadow:
-                0 8px 30px rgba(15, 23, 42, 0.07);
-        }
-
-
-        .about-card div {
-            padding: 13px 0;
-
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-
-        .about-card div:last-child {
-            border-bottom: none;
-        }
-
-
-        .about-card strong {
-            color: #0f172a;
-        }
-
-
-        /* =========================
-           EXPERIENCE
-        ========================= */
-
-        .timeline {
-            position: relative;
-
-            max-width: 900px;
-
-            margin: auto;
-        }
-
-
-        .timeline::before {
-            content: "";
-
-            position: absolute;
-
-            left: 20px;
-
-            top: 0;
-
-            bottom: 0;
-
-            width: 3px;
-
-            background: #bfdbfe;
-        }
-
-
-        .experience {
-            position: relative;
-
-            margin-bottom: 35px;
-
-            padding-left: 60px;
-        }
-
-
-        .experience::before {
-            content: "";
-
-            position: absolute;
-
-            left: 10px;
-
-            top: 8px;
-
-            width: 20px;
-
-            height: 20px;
-
-            background: #2563eb;
-
-            border-radius: 50%;
-
-            border: 4px solid #dbeafe;
-        }
-
-
-        .experience-card {
-            background: white;
-
-            padding: 28px;
-
-            border-radius: 15px;
-
-            box-shadow:
-                0 8px 30px rgba(15, 23, 42, 0.07);
-
-            transition: 0.3s;
-        }
-
-
-        .experience-card:hover {
-            transform: translateY(-4px);
-        }
-
-
-        .experience-card h3 {
-            font-size: 21px;
-
-            color: #0f172a;
-        }
-
-
-        .experience-card h4 {
-            color: #2563eb;
-
-            margin: 5px 0;
-        }
-
-
-        .experience-date {
-            color: #64748b;
-
-            font-size: 14px;
-
-            font-weight: 600;
-        }
-
-
-        .experience-card p {
-            color: #64748b;
-
-            margin-top: 15px;
-        }
-
-
-        .experience-card ul {
-            margin: 15px 0 0 20px;
-
-            color: #64748b;
-        }
-
-
-        .experience-card li {
-            margin-bottom: 8px;
-        }
-
-
-        /* =========================
-           PROJECTS
-        ========================= */
-
-        .projects-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
             gap: 25px;
         }
 
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
 
-        .project-card {
-            background: white;
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
 
-            border-radius: 15px;
+        section {
+            padding: 100px 8%;
+        }
 
-            overflow: hidden;
-
-            box-shadow:
-                0 8px 30px rgba(15, 23, 42, 0.07);
-
-            transition: 0.3s;
-
+        #home {
+            min-height: 100vh;
             display: flex;
-
-            flex-direction: column;
+            align-items: center;
         }
 
-
-        .project-card:hover {
-            transform: translateY(-7px);
-
-            box-shadow:
-                0 15px 35px rgba(15, 23, 42, 0.12);
+        .hero h1 {
+            font-size: 52px;
         }
 
-
-        .project-top {
-            height: 7px;
-
-            background: #2563eb;
+        .hero h1 span {
+            color: #38bdf8;
         }
 
-
-        .project-content {
-            padding: 25px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            height: 100%;
+        .hero h2 {
+            color: #94a3b8;
+            margin: 10px 0;
         }
 
-
-        .project-number {
-            color: #2563eb;
-
-            font-size: 13px;
-
-            font-weight: 800;
+        .hero p {
+            max-width: 700px;
+            color: #cbd5e1;
+            margin: 20px 0;
         }
 
-
-        .project-card h3 {
-            color: #0f172a;
-
-            font-size: 20px;
-
-            margin: 8px 0 12px;
-        }
-
-
-        .project-card p {
-            color: #64748b;
-
-            font-size: 14px;
-        }
-
-
-        .project-tech {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 7px;
-
-            margin-top: 18px;
-        }
-
-
-        .project-tech span {
-            background: #eff6ff;
-
-            color: #1d4ed8;
-
-            padding: 5px 9px;
-
-            border-radius: 5px;
-
-            font-size: 12px;
-
-            font-weight: 600;
-        }
-
-
-        .project-link {
+        .btn {
             display: inline-block;
-
-            margin-top: auto;
-
-            padding-top: 20px;
-
-            color: #2563eb;
-
-            font-size: 14px;
-
-            font-weight: 700;
+            background: #38bdf8;
+            color: #020617;
+            padding: 11px 22px;
+            margin-right: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-
-        .project-link:hover {
-            color: #1d4ed8;
+        .btn:hover {
+            background: #0ea5e9;
         }
 
+        .section-title {
+            text-align: center;
+            color: #38bdf8;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
 
-        /* =========================
-           SKILLS
-        ========================= */
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            color: #cbd5e1;
+            font-size: 18px;
+        }
 
-        .skills-container {
+        /* SKILLS */
+
+        .skills {
             display: flex;
-
-            justify-content: center;
-
             flex-wrap: wrap;
-
-            gap: 12px;
+            justify-content: center;
+            gap: 15px;
         }
-
 
         .skill {
-            background: white;
-
-            color: #1e40af;
-
+            background: #1e293b;
             padding: 12px 20px;
+            border-radius: 6px;
+            color: #38bdf8;
+            border: 1px solid #334155;
+        }
 
-            border-radius: 30px;
+        /* PROJECTS */
 
-            border: 1px solid #dbeafe;
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
 
-            font-weight: 600;
-
-            box-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.04);
-
+        .project {
+            background: #1e293b;
+            padding: 28px;
+            border-radius: 10px;
+            border: 1px solid #334155;
             transition: 0.3s;
         }
 
-
-        .skill:hover {
-            transform: translateY(-3px);
-
-            background: #eff6ff;
+        .project:hover {
+            transform: translateY(-7px);
+            border-color: #38bdf8;
         }
 
+        .project h3 {
+            color: #38bdf8;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
 
-        /* =========================
-           EDUCATION
-        ========================= */
+        .project p {
+            color: #cbd5e1;
+            margin-bottom: 18px;
+        }
 
-        .education-card {
-            max-width: 850px;
+        .tech {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
 
-            margin: 0 auto 20px;
+        .project a {
+            display: inline-block;
+            background: #38bdf8;
+            color: #020617;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-            background: white;
+        /* INTERNSHIP */
 
+        .internship {
+            max-width: 900px;
+            margin: auto;
+            background: #1e293b;
             padding: 30px;
-
-            border-radius: 15px;
-
-            box-shadow:
-                0 8px 30px rgba(15, 23, 42, 0.07);
+            border-left: 4px solid #38bdf8;
+            border-radius: 8px;
         }
 
-
-        .education-card h3 {
-            color: #0f172a;
-
-            margin-bottom: 5px;
+        .internship h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
         }
 
-
-        .education-card p {
-            color: #64748b;
+        .internship p,
+        .internship li {
+            color: #cbd5e1;
         }
 
+        .internship ul {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
 
-        /* =========================
-           CONTACT
-        ========================= */
+        /* CONTACT */
 
         .contact {
-            max-width: 100%;
-
             text-align: center;
-
-            background: #eff6ff;
         }
-
-
-        .contact-inner {
-            max-width: 850px;
-
-            margin: auto;
-
-            padding: 0 25px;
-        }
-
-
-        .contact h2 {
-            font-size: 36px;
-
-            color: #0f172a;
-        }
-
 
         .contact p {
-            color: #64748b;
-
-            margin: 15px 0 25px;
+            margin: 12px;
+            color: #cbd5e1;
         }
 
-
-        .contact-links {
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 12px;
+        .contact a {
+            color: #38bdf8;
+            text-decoration: none;
         }
-
-
-        .contact-links a {
-            color: #2563eb;
-
-            background: white;
-
-            padding: 11px 18px;
-
-            border-radius: 8px;
-
-            border: 1px solid #dbeafe;
-
-            font-weight: 700;
-
-            transition: 0.3s;
-        }
-
-
-        .contact-links a:hover {
-            color: white;
-
-            background: #2563eb;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
 
         footer {
             text-align: center;
-
+            background: #020617;
             padding: 25px;
-
-            background: #0f172a;
-
             color: #94a3b8;
-
-            font-size: 14px;
         }
 
+        /* MOBILE */
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 850px) {
-
-            .about-grid {
+        @media (max-width: 900px) {
+            .projects {
                 grid-template-columns: 1fr;
             }
 
-
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .hero h1 {
+                font-size: 40px;
             }
 
+            nav ul {
+                gap: 12px;
+            }
+        }
 
-            .nav-links {
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            nav {
+                flex-direction: column;
                 gap: 12px;
             }
 
-
-            .nav-links a {
-                font-size: 12px;
-            }
-
-
-            .hero h2 {
-                font-size: 22px;
-            }
-
-        }
-
-
-        @media (max-width: 600px) {
-
-            .nav-container {
-                flex-direction: column;
-
-                gap: 10px;
-            }
-
-
-            .nav-links {
-                justify-content: center;
-
+            nav ul {
                 flex-wrap: wrap;
+                justify-content: center;
             }
-
-
-            .hero {
-                padding-top: 150px;
-            }
-
 
             section {
-                padding: 65px 20px;
+                padding: 90px 5%;
             }
 
-
-            .section-title h2 {
-                font-size: 30px;
+            .hero {
+                text-align: center;
             }
-
-
-            .timeline::before {
-                left: 12px;
-            }
-
-
-            .experience {
-                padding-left: 40px;
-            }
-
-
-            .experience::before {
-                left: 3px;
-            }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
+<!-- NAVIGATION -->
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<header>
+    <nav>
+        <div class="logo">Bala Sundar</div>
 
-<nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#internship">Internship</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div class="nav-container">
 
-        <div class="logo">
-            Bala Sundar
+<!-- HOME -->
+
+<section id="home">
+    <div class="hero">
+
+        <h1>Hello, I'm <span>Bala Sundar</span></h1>
+
+        <h2>Data Analyst</h2>
+
+        <p>
+            Aspiring Data Analyst with skills in Python, SQL, Excel and Power BI.
+            Interested in transforming data into meaningful insights and
+            supporting data-driven business decisions.
+        </p>
+
+        <a href="#projects" class="btn">View Projects</a>
+
+        <a href="https://github.com/balasundar2005"
+           target="_blank"
+           class="btn">
+            GitHub
+        </a>
+
+    </div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+
+        <p>
+            I am an aspiring Data Analyst passionate about data analysis,
+            visualization and problem solving. I have worked on projects
+            involving sales data analysis, SQL databases, Python and
+            Power BI dashboards. I am looking for opportunities to apply
+            my analytical skills in a professional environment.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill">Python</div>
+        <div class="skill">SQL</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">Power BI</div>
+        <div class="skill">Excel</div>
+        <div class="skill">Data Analysis</div>
+        <div class="skill">Data Visualization</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">VS Code</div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="projects">
+
+        <!-- PROJECT 1 -->
+
+        <div class="project">
+
+            <h3>Supermarket Sales Analysis</h3>
+
+            <p>
+                Analyzed supermarket sales data to identify revenue,
+                product performance, customer trends and sales patterns.
+                Created SQL analysis and an interactive Power BI dashboard
+                to generate business insights.
+            </p>
+
+            <div class="tech">
+                Python • MySQL • Power BI • Excel
+            </div>
+
+            <a href="https://github.com/balasundar2005/supermarket-sales-analysis"
+               target="_blank">
+                View Project
+            </a>
+
         </div>
 
 
-        <ul class="nav-links">
+        <!-- PROJECT 2 -->
 
-            <li>
-                <a href="#home">Home</a>
-            </li>
+        <div class="project">
 
-            <li>
-                <a href="#about">About</a>
-            </li>
+            <h3>Retail Sales Data Analysis</h3>
 
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
+            <p>
+                Performed exploratory data analysis on retail transaction
+                data using Python and SQL. Analyzed revenue, customers,
+                product categories and purchasing trends to support
+                business decision-making.
+            </p>
 
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
+            <div class="tech">
+                Python • Pandas • MySQL • Power BI
+            </div>
 
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
+            <a href="https://github.com/balasundar2005/retail-sales-analysis"
+               target="_blank">
+                View Project
+            </a>
 
-            <li>
-                <a href="#education">Education</a>
-            </li>
+        </div>
 
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
 
+        <!-- PROJECT 3 -->
+
+        <div class="project">
+
+            <h3>Blood Harmony</h3>
+
+            <p>
+                A blood matching portal designed to help users find nearby
+                blood banks based on selected blood groups and availability.
+                The project focuses on improving access to blood availability
+                information.
+            </p>
+
+            <div class="tech">
+                React • Node.js • PostgreSQL • HTML • CSS
+            </div>
+
+            <a href="https://github.com/balasundar2005/blood-harmony-pro"
+               target="_blank">
+                View Project
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTERNSHIP -->
+
+<section id="internship">
+
+    <h2 class="section-title">Internship Experience</h2>
+
+    <div class="internship">
+
+        <h3>Backend Management Intern</h3>
+
+        <p><strong>Foiwe Info Global Solutions</strong></p>
+
+        <p>
+            Worked on backend management and content operations
+            related to DAZN FIFA World Cup activities.
+        </p>
+
+        <ul>
+            <li>Managed event information received from event managers.</li>
+            <li>Worked with Application Control Centre (ACC).</li>
+            <li>Handled Fanzone content for assigned live matches.</li>
+            <li>Worked with regional and language configurations.</li>
+            <li>Performed content moderation according to client guidelines.</li>
         </ul>
 
     </div>
 
-</nav>
+</section>
 
 
+<!-- CONTACT -->
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<section id="contact">
 
-<section class="hero" id="home">
+    <h2 class="section-title">Contact Me</h2>
 
-    <div class="hero-content">
-
-        <div class="hero-small">
-            Hello, I'm
-        </div>
-
-
-        <h1>
-            Bala <span>Sundar</span>
-        </h1>
-
-
-        <h2>
-            Aspiring Data Analyst
-        </h2>
-
+    <div class="contact">
 
         <p>
-            Computer Science Engineer passionate about
-            transforming data into meaningful business
-            insights using Python, SQL, Power BI and Excel.
+            Email:
+            <a href="mailto:balasundarsenthil@gmail.com">
+                balasundarsenthil@gmail.com
+            </a>
         </p>
 
-
-        <div class="buttons">
-
-            <a
-                href="#projects"
-                class="btn btn-primary">
-
-                View My Projects
-
+        <p>
+            Phone:
+            <a href="tel:+919080374685">
+                +91 9080374685
             </a>
+        </p>
 
-
-            <a
-                href="#experience"
-                class="btn btn-secondary">
-
-                My Experience
-
+        <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/balasundar-s-890669259/"
+               target="_blank">
+                View LinkedIn Profile
             </a>
+        </p>
 
-
-            <a
-                href="Bala Resume.pdf"
-                target="_blank"
-                class="btn btn-secondary">
-
-                View Resume
-
+        <p>
+            GitHub:
+            <a href="https://github.com/balasundar2005"
+               target="_blank">
+                github.com/balasundar2005
             </a>
-
-        </div>
+        </p>
 
     </div>
 
 </section>
 
 
+<!-- FOOTER -->
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
+<footer>
 
-<section id="about">
+    <p>
+        © 2026 Bala Sundar | Data Analyst Portfolio
+    </p>
 
-    <div class="section-title">
+</footer>
 
-        <h2>
-            About Me
-        </h2>
-
-        <p>
-            Turning data into meaningful insights
-        </p>
-
-    </div>
-
-
-    <div class="about-grid">
-
-
-        <div class="about-text">
-
-            <h3>
-                Data Analyst with a
-                problem-solving mindset
-            </h3>
-
-
-            <p>
-                I am a Computer Science Engineering
-                graduate with a strong interest in
-                Data Analytics and data-driven
-                decision-making.
-            </p>
-
-
-            <p>
-                I enjoy working with datasets,
-                cleaning and analyzing data,
-                identifying trends, building
-                dashboards and communicating
-                insights through visualizations.
-            </p>
-
-
-            <p>
-                My current focus is developing
-                practical projects using Python,
-                SQL, Excel and Power BI to strengthen
-                my analytical and business intelligence
-                skills.
-            </p>
-
-        </div>
-
-
-
-        <div class="about-card">
-
-            <div>
-                <strong>Role:</strong>
-                Aspiring Data Analyst
-            </div>
-
-
-            <div>
-                <strong>Degree:</strong>
-                B.E. Computer Science Engineering
-            </div>
-
-
-            <div>
-                <strong>Location:</strong>
-                Cuddalore, Tamil Nadu
-            </div>
-
-
-            <div>
-                <strong>Focus:</strong>
-                Data Analysis & Business Intelligence
-            </div>
-
-
-            <div>
-                <strong>Tools:</strong>
-                Python, SQL, Power BI, Excel
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     INTERNSHIP EXPERIENCE
-===================================================== -->
-
-<section id="experience">
-
-    <div class="section-title">
-
-        <h2>
-            Internship Experience
-        </h2>
-
-        <p>
-            Professional experience and practical exposure
-        </p>
-
-    </div>
-
-
-    <div class="timeline">
-
-
-        <!-- SENNOVA -->
-
-        <div class="experience">
-
-            <div class="experience-card">
-
-                <h3>
-                    Data Analyst Intern
-                </h3>
-
-
-                <h4>
-                    Sennova Innovations Pvt. Ltd.
-                </h4>
-
-
-                <div class="experience-date">
-                    Jan 05 – Apr 05, 2026
-                </div>
-
-
-                <p>
-                    Worked on learner engagement data
-                    and applied data analysis techniques
-                    to identify performance and dropout
-                    patterns.
-                </p>
-
-
-                <ul>
-
-                    <li>
-                        Analyzed learner engagement data
-                        using Python and Pandas.
-                    </li>
-
-
-                    <li>
-                        Developed interactive dashboards
-                        using Power BI.
-                    </li>
-
-
-                    <li>
-                        Applied Machine Learning techniques
-                        to develop predictive models.
-                    </li>
-
-
-                    <li>
-                        Identified patterns to support
-                        improvements in student outcomes.
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FOIWE -->
-
-        <div class="experience">
-
-            <div class="experience-card">
-
-                <h3>
-                    System Analyst (Moderation)
-                </h3>
-
-
-                <h4>
-                    Foiwe Info Global Solutions
-                </h4>
-
-
-                <div class="experience-date">
-                    Jun 14 – Jul 23, 2025
-                </div>
-
-
-                <p>
-                    Worked on backend operations and
-                    content moderation for DAZN,
-                    supporting multi-region events
-                    and regional content management.
-                </p>
-
-
-                <ul>
-
-                    <li>
-                        Managed backend operations for
-                        multi-region events.
-                    </li>
-
-
-                    <li>
-                        Worked with regional content
-         
+</body>
+</html>
