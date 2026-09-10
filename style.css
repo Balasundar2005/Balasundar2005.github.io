@@ -1393,3 +1393,194 @@ nav a:hover::after {
    ========================================================= */
 
 .r
+/* =========================================================
+   PREMIUM FINISHING TOUCHES
+   ========================================================= */
+
+/* Smooth page appearance */
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* Better section separation */
+.about,
+.experience,
+.education {
+    position: relative;
+}
+
+.about::before,
+.experience::before,
+.education::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(1160px, 90%);
+    height: 1px;
+
+    top: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e3ebf5,
+            transparent
+        );
+}
+
+
+/* Better project image movement */
+.project-image {
+    transition: 0.4s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.015);
+}
+
+
+/* Better project link */
+.project-link::after {
+    content: "";
+
+    display: inline-block;
+
+    width: 0;
+    height: 1px;
+
+    margin-left: 5px;
+
+    background: var(--cyan);
+
+    transition: 0.3s;
+}
+
+.project-link:hover::after {
+    width: 18px;
+}
+
+
+/* Skill icon hover */
+.skill-symbol {
+    transition: 0.3s;
+}
+
+.skill-card:hover .skill-symbol {
+    transform: translateX(5px);
+
+    color: var(--cyan);
+}
+
+
+/* Tags hover */
+.tags span,
+.project-tags span {
+    transition: 0.2s;
+}
+
+.tags span:hover,
+.project-tags span:hover {
+    color: var(--blue);
+
+    border-color: #bdd4f3;
+
+    background: #eef5ff;
+}
+
+
+/* Contact hover arrow */
+.contact-item > span {
+    transition: 0.25s;
+}
+
+.contact-item:hover > span {
+    transform: translate(3px, -3px);
+}
+
+
+/* Logo hover */
+.logo > span {
+    transition: 0.3s;
+}
+
+.logo:hover > span {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+
+/* Button arrow movement */
+.btn-primary span {
+    transition: 0.25s;
+}
+
+.btn-primary:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* Dashboard subtle entrance */
+.dashboard-card {
+    animation: dashboardEnter 0.8s ease both;
+}
+
+@keyframes dashboardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px) rotate(3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(1deg);
+    }
+}
+
+
+/* Better focus for keyboard navigation */
+a:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+
+    outline-offset: 4px;
+
+    border-radius: 5px;
+}
+
+
+/* Selection color */
+::selection {
+    background: #dbeafe;
+    color: #1e3a8a;
+}
+
+
+/* Prevent horizontal movement */
+html,
+body {
+    max-width: 100%;
+}
+
+
+/* Mobile dashboard correction */
+@media (max-width: 700px) {
+
+    .dashboard-card {
+        animation: none;
+    }
+
+    .project-card:hover .project-image {
+        transform: none;
+    }
+
+    .about::before,
+    .experience::before,
+    .education::before {
+        width: 91%;
+    }
+}
