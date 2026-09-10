@@ -1,739 +1,893 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bala Sundar | Data Analyst Portfolio</title>
+<title>Bala Sundar | Data Analyst Portfolio</title>
 
-    <meta name="description"
-          content="Bala Sundar - Data Analyst skilled in Python, SQL, Power BI and Excel.">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-    <link rel="stylesheet" href="style.css">
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+    line-height:1.6;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
-          rel="stylesheet">
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+/* NAVBAR */
+header{
+    background:#ffffff;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    min-height:72px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    color:#1463ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:15px;
+    font-weight:600;
+    color:#374151;
+}
+
+.nav-links a:hover{
+    color:#1463ff;
+}
+
+/* HERO */
+.hero{
+    background:#ffffff;
+    padding:90px 0;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    background:#eaf1ff;
+    color:#1463ff;
+    padding:8px 15px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1.05;
+    margin-bottom:18px;
+    color:#111827;
+}
+
+.hero h1 span{
+    color:#1463ff;
+}
+
+.hero h2{
+    font-size:25px;
+    color:#374151;
+    margin-bottom:18px;
+}
+
+.hero p{
+    font-size:17px;
+    color:#667085;
+    max-width:650px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 22px;
+    border-radius:8px;
+    font-weight:700;
+    display:inline-block;
+}
+
+.primary{
+    background:#1463ff;
+    color:#fff;
+}
+
+.secondary{
+    background:#eef2f7;
+    color:#172033;
+}
+
+/* HERO CARD */
+.profile-card{
+    background:#111827;
+    color:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+}
+
+.profile-card .initial{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#1463ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:35px;
+    font-weight:800;
+    margin-bottom:22px;
+}
+
+.profile-card h3{
+    font-size:27px;
+    margin-bottom:6px;
+}
+
+.profile-card p{
+    color:#cbd5e1;
+    margin-bottom:20px;
+}
+
+.profile-info{
+    border-top:1px solid #374151;
+    padding-top:18px;
+}
+
+.profile-info div{
+    margin:12px 0;
+    font-size:14px;
+    word-break:break-word;
+}
+
+.profile-info strong{
+    color:#93c5fd;
+}
+
+/* SECTIONS */
+section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:36px;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#667085;
+}
+
+/* ABOUT */
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+}
+
+.about-box{
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid #e5e7eb;
+}
+
+.about-box h3{
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.about-box p{
+    color:#667085;
+}
+
+/* SKILLS */
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+}
+
+.skill{
+    background:#fff;
+    border:1px solid #dbe2ea;
+    padding:12px 18px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+/* EXPERIENCE */
+.timeline{
+    max-width:850px;
+    margin:auto;
+}
+
+.experience-card{
+    background:#fff;
+    border-left:5px solid #1463ff;
+    padding:28px;
+    margin-bottom:25px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
+}
+
+.experience-card h3{
+    font-size:22px;
+}
+
+.experience-card .company{
+    color:#1463ff;
+    font-weight:700;
+}
+
+.experience-card .date{
+    color:#667085;
+    font-size:14px;
+    margin:5px 0 12px;
+}
+
+.experience-card p{
+    color:#596273;
+}
+
+/* PROJECTS */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.project-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:15px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:.25s;
+}
+
+.project-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.project-top{
+    background:#1463ff;
+    color:white;
+    padding:25px;
+}
+
+.project-number{
+    font-size:13px;
+    font-weight:700;
+    opacity:.85;
+}
+
+.project-top h3{
+    margin-top:8px;
+    font-size:22px;
+    line-height:1.3;
+}
+
+.project-content{
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.project-content p{
+    color:#667085;
+    margin-bottom:20px;
+}
+
+.tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-bottom:25px;
+}
+
+.tech span{
+    background:#eef4ff;
+    color:#1463ff;
+    padding:5px 9px;
+    border-radius:5px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.project-btn{
+    margin-top:auto;
+    background:#111827;
+    color:white;
+    padding:11px;
+    text-align:center;
+    border-radius:7px;
+    font-weight:700;
+}
+
+/* EDUCATION */
+.education{
+    max-width:800px;
+    margin:auto;
+}
+
+.edu-card{
+    background:white;
+    padding:28px;
+    border-radius:12px;
+    border:1px solid #e5e7eb;
+    margin-bottom:20px;
+}
+
+.edu-card h3{
+    font-size:21px;
+}
+
+.edu-card .degree{
+    color:#1463ff;
+    font-weight:700;
+}
+
+.edu-card p{
+    color:#667085;
+}
+
+/* CONTACT */
+.contact{
+    background:#111827;
+    color:white;
+}
+
+.contact .section-title h2{
+    color:white;
+}
+
+.contact .section-title p{
+    color:#cbd5e1;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.contact-card{
+    background:#1f2937;
+    padding:25px 18px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.contact-card .icon{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.contact-card h3{
+    font-size:16px;
+    margin-bottom:7px;
+}
+
+.contact-card a{
+    color:#93c5fd;
+    font-size:14px;
+    word-break:break-word;
+}
+
+/* FOOTER */
+footer{
+    background:#0b1220;
+    color:#94a3b8;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-grid,
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:60px 0;
+    }
+
+    .hero h1{
+        font-size:44px;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    section{
+        padding:60px 0;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .profile-card{
+        padding:25px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
+<header>
+<div class="container navbar">
 
-<header class="navbar">
-    <div class="nav-container">
+<div class="logo">Bala Sundar</div>
 
-        <a href="#home" class="logo">
-            <span>BS</span>
-            <div>
-                <strong>Bala Sundar</strong>
-                <small>DATA ANALYST</small>
-            </div>
-        </a>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-        </nav>
-
-        <a href="#contact" class="nav-contact">
-            Let's Talk
-        </a>
-
-    </div>
+</div>
 </header>
 
 
-<main>
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-grid">
 
-<!-- ================= HOME ================= -->
+<div>
+<span class="badge">DATA ANALYST</span>
 
-<section id="home" class="hero">
+<h1>
+Hi, I'm <span>Bala Sundar</span>
+</h1>
 
-    <div class="hero-container">
+<h2>Data Analyst | Python | SQL | Power BI</h2>
 
-        <div class="hero-content">
+<p>
+I am an aspiring Data Analyst passionate about transforming raw data
+into meaningful insights using data analysis, visualization and
+business intelligence tools.
+</p>
 
-            <div class="availability">
-                <span></span>
-                Open to Data Analyst Opportunities
-            </div>
-
-            <p class="eyebrow">
-                HELLO, I'M BALA SUNDAR
-            </p>
-
-            <h1>
-                Data that tells a
-                <span>better story.</span>
-            </h1>
-
-            <p class="hero-text">
-                Aspiring Data Analyst passionate about transforming
-                raw data into meaningful insights using Python,
-                SQL, Power BI and Excel.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#projects" class="btn btn-primary">
-                    Explore My Work
-                    <span>↗</span>
-                </a>
-
-                <a href="#contact" class="btn btn-secondary">
-                    Contact Me
-                </a>
-
-            </div>
-
-            <div class="socials">
-
-                <a href="https://github.com/balasundar2005"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    GitHub ↗
-                </a>
-
-                <a href="https://www.linkedin.com/in/balasundar-s-890669259"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    LinkedIn ↗
-                </a>
-
-            </div>
-
-        </div>
+<div class="buttons">
+<a class="btn primary" href="#projects">View Projects</a>
+<a class="btn secondary" href="#contact">Contact Me</a>
+</div>
+</div>
 
 
-        <!-- Dashboard -->
+<div class="profile-card">
 
-        <div class="hero-visual">
+<div class="initial">BS</div>
 
-            <div class="analytics-card">
+<h3>Bala Sundar</h3>
+<p>Data Analyst</p>
 
-                <div class="analytics-header">
+<div class="profile-info">
 
-                    <div>
-                        <small>DATA ANALYTICS</small>
-                        <h3>My Toolkit</h3>
-                    </div>
+<div>
+<strong>Email</strong><br>
+<a href="mailto:balasundarsenthil@gmail.com">
+balasundarsenthil@gmail.com
+</a>
+</div>
 
-                    <div class="live">
-                        <span></span>
-                        2026
-                    </div>
+<div>
+<strong>Mobile</strong><br>
+<a href="tel:+919080374685">
++91 9080374685
+</a>
+</div>
 
-                </div>
+<div>
+<strong>LinkedIn</strong><br>
+<a href="https://www.linkedin.com/in/balasundar-s-890669259" target="_blank">
+linkedin.com/in/balasundar-s-890669259
+</a>
+</div>
 
+<div>
+<strong>GitHub</strong><br>
+<a href="https://github.com/balasundar2005" target="_blank">
+github.com/balasundar2005
+</a>
+</div>
 
-                <div class="chart-area">
+</div>
+</div>
 
-                    <div class="chart-heading">
-                        <span>SKILL OVERVIEW</span>
-                        <strong>TOOLS</strong>
-                    </div>
-
-                    <div class="bars">
-
-                        <div class="bar-item">
-                            <div class="bar bar-1"></div>
-                            <span>PY</span>
-                        </div>
-
-                        <div class="bar-item">
-                            <div class="bar bar-2"></div>
-                            <span>SQL</span>
-                        </div>
-
-                        <div class="bar-item">
-                            <div class="bar bar-3"></div>
-                            <span>BI</span>
-                        </div>
-
-                        <div class="bar-item">
-                            <div class="bar bar-4"></div>
-                            <span>EX</span>
-                        </div>
-
-                        <div class="bar-item">
-                            <div class="bar bar-5"></div>
-                            <span>DA</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="tool-list">
-
-                    <div class="tool-row">
-                        <div class="tool-icon python">Py</div>
-                        <div class="tool-name">
-                            <strong>Python</strong>
-                            <small>Data Analysis</small>
-                        </div>
-                        <b>90%</b>
-                    </div>
-
-                    <div class="tool-row">
-                        <div class="tool-icon sql">SQL</div>
-                        <div class="tool-name">
-                            <strong>SQL</strong>
-                            <small>Database Analysis</small>
-                        </div>
-                        <b>88%</b>
-                    </div>
-
-                    <div class="tool-row">
-                        <div class="tool-icon powerbi">BI</div>
-                        <div class="tool-name">
-                            <strong>Power BI</strong>
-                            <small>Visualization</small>
-                        </div>
-                        <b>85%</b>
-                    </div>
-
-                    <div class="tool-row">
-                        <div class="tool-icon excel">EX</div>
-                        <div class="tool-name">
-                            <strong>Excel</strong>
-                            <small>Reporting</small>
-                        </div>
-                        <b>82%</b>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="floating-card project-count">
-                <small>PROJECTS</small>
-                <strong>03</strong>
-            </div>
-
-            <div class="floating-card analyst-card">
-                <small>FOCUS</small>
-                <strong>DATA</strong>
-            </div>
-
-        </div>
-
-    </div>
-
+</div>
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
 
-<section id="about" class="section">
+<div class="section-title">
+<h2>About Me</h2>
+<p>Professional profile</p>
+</div>
 
-    <div class="container">
+<div class="about">
 
-        <div class="section-title">
-            <span>01 — ABOUT</span>
-            <h2>
-                Curious about data.
-                <em>Focused on insights.</em>
-            </h2>
-        </div>
+<div class="about-box">
+<h3>Who I Am</h3>
+<p>
+I am a Data Analyst with an interest in analyzing data,
+identifying patterns and creating meaningful visualizations
+that support better decision-making.
+</p>
+</div>
 
+<div class="about-box">
+<h3>What I Do</h3>
+<p>
+I work with Python, SQL, MySQL, Excel and Power BI to clean,
+analyze and visualize data. I also have experience with
+web technologies and software development.
+</p>
+</div>
 
-        <div class="about-grid">
-
-            <div class="about-box">
-
-                <div class="about-number">01</div>
-
-                <h3>
-                    Analyze.<br>
-                    Understand.<br>
-                    Improve.
-                </h3>
-
-                <p>
-                    Turning information into useful decisions.
-                </p>
-
-            </div>
-
-
-            <div class="about-content">
-
-                <p class="about-main">
-                    I'm an aspiring Data Analyst who enjoys
-                    working with data to discover patterns,
-                    understand problems and communicate insights.
-                </p>
-
-                <p>
-                    I have hands-on experience working with
-                    Python, Pandas, SQL, MySQL, Power BI and Excel
-                    through academic projects and internships.
-                </p>
-
-                <p>
-                    I enjoy the complete data analysis process —
-                    from cleaning and transforming raw datasets
-                    to building visualizations and presenting
-                    meaningful findings.
-                </p>
-
-
-                <div class="about-stats">
-
-                    <div>
-                        <strong>03</strong>
-                        <span>Projects</span>
-                    </div>
-
-                    <div>
-                        <strong>02</strong>
-                        <span>Internships</span>
-                    </div>
-
-                    <div>
-                        <strong>05+</strong>
-                        <span>Tools</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
 </section>
 
 
-<!-- ================= SKILLS ================= -->
+<!-- SKILLS -->
+<section id="skills">
+<div class="container">
 
-<section id="skills" class="section skills-section">
+<div class="section-title">
+<h2>Skills</h2>
+<p>Tools and technologies</p>
+</div>
 
-    <div class="container">
+<div class="skills">
 
-        <div class="section-title">
-            <span>02 — SKILLS</span>
-            <h2>
-                Tools I use to
-                <em>work with data.</em>
-            </h2>
-        </div>
+<div class="skill">Python</div>
+<div class="skill">Pandas</div>
+<div class="skill">SQL</div>
+<div class="skill">MySQL</div>
+<div class="skill">Power BI</div>
+<div class="skill">Microsoft Excel</div>
+<div class="skill">Data Analysis</div>
+<div class="skill">Data Visualization</div>
+<div class="skill">GitHub</div>
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">React</div>
 
-
-        <div class="skills-grid">
-
-            <div class="skill-card featured">
-                <div class="skill-top">
-                    <span>01</span>
-                    <b>PY</b>
-                </div>
-
-                <h3>Python & Pandas</h3>
-
-                <p>
-                    Data cleaning, transformation,
-                    exploratory analysis and automation.
-                </p>
-
-                <div class="tags">
-                    <span>Python</span>
-                    <span>Pandas</span>
-                    <span>EDA</span>
-                </div>
-            </div>
-
-
-            <div class="skill-card">
-                <div class="skill-top">
-                    <span>02</span>
-                    <b>SQL</b>
-                </div>
-
-                <h3>SQL & MySQL</h3>
-
-                <p>
-                    Querying databases and extracting
-                    meaningful business information.
-                </p>
-
-                <div class="tags">
-                    <span>SQL</span>
-                    <span>MySQL</span>
-                </div>
-            </div>
-
-
-            <div class="skill-card">
-                <div class="skill-top">
-                    <span>03</span>
-                    <b>BI</b>
-                </div>
-
-                <h3>Power BI</h3>
-
-                <p>
-                    Interactive dashboards, KPIs,
-                    reports and business visualization.
-                </p>
-
-                <div class="tags">
-                    <span>Power BI</span>
-                    <span>DAX</span>
-                </div>
-            </div>
-
-
-            <div class="skill-card">
-                <div class="skill-top">
-                    <span>04</span>
-                    <b>EX</b>
-                </div>
-
-                <h3>Microsoft Excel</h3>
-
-                <p>
-                    Data organization, analysis,
-                    formulas and reporting.
-                </p>
-
-                <div class="tags">
-                    <span>Excel</span>
-                    <span>Reports</span>
-                </div>
-            </div>
-
-
-            <div class="skill-card">
-                <div class="skill-top">
-                    <span>05</span>
-                    <b>DV</b>
-                </div>
-
-                <h3>Data Visualization</h3>
-
-                <p>
-                    Creating clear visuals that communicate
-                    patterns and insights effectively.
-                </p>
-
-                <div class="tags">
-                    <span>Charts</span>
-                    <span>Dashboards</span>
-                </div>
-            </div>
-
-
-            <div class="skill-card">
-                <div class="skill-top">
-                    <span>06</span>
-                    <b>GH</b>
-                </div>
-
-                <h3>GitHub</h3>
-
-                <p>
-                    Version control, project documentation
-                    and portfolio management.
-                </p>
-
-                <div class="tags">
-                    <span>Git</span>
-                    <span>GitHub</span>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
 </section>
 
 
-<!-- ================= EXPERIENCE ================= -->
+<!-- EXPERIENCE -->
+<section id="experience">
+<div class="container">
 
-<section id="experience" class="section">
+<div class="section-title">
+<h2>Experience</h2>
+<p>Professional experience</p>
+</div>
 
-    <div class="container">
+<div class="timeline">
 
-        <div class="section-title">
-            <span>03 — EXPERIENCE</span>
-            <h2>
-                Experience that
-                <em>built my foundation.</em>
-            </h2>
-        </div>
+<div class="experience-card">
+<h3>Data Analyst Intern</h3>
+<div class="company">Sennova</div>
+<div class="date">Jan 05, 2026 – Apr 05, 2026</div>
 
-
-        <div class="experience-list">
-
-            <article class="experience-card">
-
-                <div class="experience-date">
-                    <span>2026</span>
-                    JAN — APR
-                </div>
-
-                <div class="experience-info">
-
-                    <small>SENNOVA</small>
-
-                    <h3>Data Analyst Intern</h3>
-
-                    <p>
-                        Gained practical exposure to data analysis
-                        and reporting. Worked with business datasets
-                        to understand data, identify patterns and
-                        generate meaningful insights.
-                    </p>
-
-                    <div class="tags">
-                        <span>Data Analysis</span>
-                        <span>Python</span>
-                        <span>Excel</span>
-                        <span>Reporting</span>
-                    </div>
-
-                </div>
-
-                <div class="experience-arrow">↗</div>
-
-            </article>
+<p>
+Gained practical exposure to data analysis, reporting and
+working with data to generate useful business insights.
+</p>
+</div>
 
 
-            <article class="experience-card">
+<div class="experience-card">
+<h3>System Analyst (Moderation)</h3>
+<div class="company">Foiwe Info Global Solutions</div>
+<div class="date">Jun 14, 2025 – Jul 23, 2025</div>
 
-                <div class="experience-date">
-                    <span>2025</span>
-                    JUN — JUL
-                </div>
+<p>
+Worked on backend management and content moderation for the
+DAZN FIFA World Cup project, following client regional and
+community standards.
+</p>
+</div>
 
-                <div class="experience-info">
-
-                    <small>FOIWE INFO GLOBAL SOLUTIONS</small>
-
-                    <h3>System Analyst (Moderation)</h3>
-
-                    <p>
-                        Supported backend management and content
-                        moderation activities for client platforms.
-                        Followed quality standards, regional
-                        requirements and client guidelines.
-                    </p>
-
-                    <div class="tags">
-                        <span>Backend Management</span>
-                        <span>Content Moderation</span>
-                        <span>Quality Control</span>
-                    </div>
-
-                </div>
-
-                <div class="experience-arrow">↗</div>
-
-            </article>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
 </section>
 
 
-<!-- ================= PROJECTS ================= -->
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
 
-<section id="projects" class="section projects-section">
-
-    <div class="container">
-
-        <div class="section-title project-title">
-            <span>04 — PROJECTS</span>
-            <h2>
-                Selected work.
-                <em>Built with purpose.</em>
-            </h2>
-        </div>
+<div class="section-title">
+<h2>Featured Projects</h2>
+<p>Selected projects demonstrating my technical and analytical skills</p>
+</div>
 
 
-        <div class="projects-grid">
+<div class="projects">
+
+<!-- PROJECT 1 -->
+<div class="project-card">
+
+<div class="project-top">
+<div class="project-number">PROJECT 01</div>
+<h3>Supermarket Sales Analysis & Business Intelligence Dashboard</h3>
+</div>
+
+<div class="project-content">
+
+<p>
+Analyzed supermarket sales data to identify revenue trends,
+product performance and customer purchasing patterns using
+SQL, Python and Power BI.
+</p>
+
+<div class="tech">
+<span>Python</span>
+<span>SQL</span>
+<span>MySQL</span>
+<span>Power BI</span>
+</div>
+
+<a class="project-btn"
+href="https://github.com/balasundar2005/supermarket-sales-analysis"
+target="_blank">
+View on GitHub →
+</a>
+
+</div>
+</div>
 
 
-            <!-- PROJECT 1 -->
+<!-- PROJECT 2 -->
+<div class="project-card">
 
-            <article class="project-card large-project">
+<div class="project-top">
+<div class="project-number">PROJECT 02</div>
+<h3>Retail Sales Data Analysis</h3>
+</div>
 
-                <div class="project-visual supermarket">
+<div class="project-content">
 
-                    <div class="visual-label">
-                        <span>01</span>
-                        BUSINESS INTELLIGENCE
-                    </div>
+<p>
+Performed data cleaning, analysis and visualization on retail
+sales data to understand revenue, transactions, customers and
+product category performance.
+</p>
 
-                    <div class="mini-dashboard">
+<div class="tech">
+<span>Python</span>
+<span>Pandas</span>
+<span>SQL</span>
+<span>MySQL</span>
+<span>Power BI</span>
+</div>
 
-                        <div class="mini-title">
-                            SALES PERFORMANCE
-                        </div>
+<a class="project-btn"
+href="https://github.com/balasundar2005/retail-sales-analysis"
+target="_blank">
+View on GitHub →
+</a>
 
-                        <div class="mini-bars">
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                            <i></i>
-                        </div>
-
-                        <div class="mini-stats">
-                            <span>REVENUE</span>
-                            <span>SALES</span>
-                            <span>PRODUCTS</span>
-                        </div>
-
-                    </div>
-
-                </div>
+</div>
+</div>
 
 
-                <div class="project-info">
+<!-- PROJECT 3 -->
+<div class="project-card">
 
-                    <small>DATA ANALYTICS</small>
+<div class="project-top">
+<div class="project-number">PROJECT 03</div>
+<h3>Smart Blood Donation & Matching System</h3>
+</div>
 
-                    <h3>
-                        Supermarket Sales Analysis &
-                        Business Intelligence Dashboard
-                    </h3>
+<div class="project-content">
 
-                    <p>
-                        Analyzed supermarket sales data to identify
-                        revenue trends, product performance and
-                        customer behavior. Built an interactive
-                        Power BI dashboard for business insights.
-                    </p>
+<p>
+A web-based blood matching platform designed to help users
+find blood banks based on blood-group availability and
+support faster access to blood resources.
+</p>
 
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>SQL</span>
-                        <span>MySQL</span>
-                        <span>Power BI</span>
-                    </div>
+<div class="tech">
+<span>React</span>
+<span>Node.js</span>
+<span>PostgreSQL</span>
+<span>HTML</span>
+<span>CSS</span>
+</div>
 
-                    <a class="project-link"
-                       href="https://github.com/balasundar2005/supermarket-sales-analysis"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View Project on GitHub
-                        <span>↗</span>
-                    </a>
+<a class="project-btn"
+href="https://github.com/balasundar2005/blood-harmony-pro"
+target="_blank">
+View on GitHub →
+</a>
 
-                </div>
+</div>
+</div>
 
-            </article>
-
-
-            <!-- PROJECT 2 -->
-
-            <article class="project-card">
-
-                <div class="project-visual retail">
-
-                    <div class="visual-label">
-                        <span>02</span>
-                        DATA ANALYSIS
-                    </div>
-
-                    <div class="retail-visual">
-                        <strong>DATA</strong>
-                        <span>ANALYSIS</span>
-
-                        <div class="node node-a"></div>
-                        <div class="node node-b"></div>
-                        <div class="node node-c"></div>
-                    </div>
-
-                </div>
+</div>
+</div>
+</section>
 
 
-                <div class="project-info">
+<!-- EDUCATION -->
+<section id="education">
+<div class="container">
 
-                    <small>DATA ANALYTICS</small>
+<div class="section-title">
+<h2>Education</h2>
+<p>Academic background</p>
+</div>
 
-                    <h3>
-                        Retail Sales Data Analysis
-                    </h3>
+<div class="education">
 
-                    <p>
-                        Performed data cleaning, exploratory analysis
-                        and SQL-based analysis to understand sales,
-                        customer and product performance.
-                    </p>
+<div class="edu-card">
+<h3>Adhiyamaan College of Engineering</h3>
+<div class="degree">Bachelor of Engineering</div>
+<p>2022 – 2026</p>
+<p>CGPA: 7.01</p>
+</div>
 
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Pandas</span>
-                        <span>MySQL</span>
-                        <span>Power BI</span>
-                    </div>
+<div class="edu-card">
+<h3>Higher Secondary Certificate (HSC)</h3>
+<p>Percentage: 82.5%</p>
+</div>
 
-                    <a class="project-link"
-                       href="https://github.com/balasundar2005/retail-sales-analysis"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View Project on GitHub
-                        <span>↗</span>
-                    </a>
+<div class="edu-card">
+<h3>Secondary School Leaving Certificate (SSLC)</h3>
+<p>Percentage: 97.2%</p>
+</div>
 
-                </div>
-
-            </article>
-
-
-            <!-- PROJECT 3 -->
-
-            <article class="project-card">
-
-                <div class="project-visual blood">
-
-                    <div class="visual-label">
-                        <span>03</span>
-                        WEB APPLICATION
-                    </div>
-
-                    <div class="blood-symbol">
-                        +
-                    </div>
-
-                    <strong class="blood-title">
-                        BLOOD MATCHING
-                    </strong>
-
-                    <div class="blood-circle circle-one"></div>
-                    <div class="blood-circle circle-two"></div>
-
-                </div>
+</div>
+</div>
+</section>
 
 
-                <div class="project-info">
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="container">
 
-                    <small>WEB DEVELOPMENT</small>
+<div class="section-title">
+<h2>Let's Connect</h2>
+<p>Feel free to contact me for opportunities and professional connections.</p>
+</div>
 
-                    <h3>
-                        Smart Blood Donation &
-                        Matching System
-                    </h3>
+<div class="contact-grid">
 
-                    <p>
-                        Developed a web-based platform designed
-                        to help users find available blood resources
-                        and connect with suitable blood ban
+<div class="contact-card">
+<div class="icon">✉</div>
+<h3>Email</h3>
+<a href="mailto:balasundarsenthil@gmail.com">
+balasundarsenthil@gmail.com
+</a>
+</div>
+
+<div class="contact-card">
+<div class="icon">☎</div>
+<h3>Mobile</h3>
+<a href="tel:+919080374685">
++91 9080374685
+</a>
+</div>
+
+<div class="contact-card">
+<div class="icon">in</div>
+<h3>LinkedIn</h3>
+<a href="https://www.linkedin.com/in/balasundar-s-890669259"
+target="_blank">
+View LinkedIn Profile
+</a>
+</div>
+
+<div class="contact-card">
+<div class="icon">GH</div>
+<h3>GitHub</h3>
+<a href="https://github.com/balasundar2005"
+target="_blank">
+View GitHub Profile
+</a>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+© 2026 Bala Sundar | Data Analyst Portfolio
+</footer>
+
+</body>
+</html>
