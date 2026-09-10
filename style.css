@@ -1584,3 +1584,62 @@ body {
         width: 91%;
     }
 }
+/* CENTER ALIGNMENT FIX */
+
+.container,
+.nav-container,
+.hero-container,
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.container {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.hero-container {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.nav-container {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.footer-container {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Keep sections centered */
+section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Prevent horizontal shifting */
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .container,
+    .nav-container,
+    .hero-container,
+    .footer-container {
+        width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
