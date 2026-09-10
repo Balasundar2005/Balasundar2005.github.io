@@ -1,14 +1,32 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bala Sundar | Data Analyst Portfolio</title>
 
+    <meta name="description"
+          content="Bala Sundar - Aspiring Data Analyst Portfolio">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
 
         * {
             margin: 0;
@@ -17,315 +35,791 @@
             scroll-behavior: smooth;
         }
 
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fb;
-            color: #222;
+            font-family: "Inter", sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
             line-height: 1.6;
         }
 
-        /* ================= NAVBAR ================= */
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
 
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: #111827;
-            padding: 15px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #e2e8f0;
         }
+
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+
+            padding: 18px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
 
         .logo {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 23px;
+            font-weight: 800;
+            color: #2563eb;
         }
 
-        nav ul {
-            list-style: none;
+
+        .nav-links {
             display: flex;
-            gap: 25px;
+            align-items: center;
+            gap: 24px;
+
+            list-style: none;
         }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
+
+        .nav-links a {
+            color: #334155;
+            font-size: 14px;
+            font-weight: 600;
+
             transition: 0.3s;
         }
 
-        nav ul li a:hover {
-            color: #38bdf8;
+
+        .nav-links a:hover {
+            color: #2563eb;
         }
 
-        /* ================= HERO ================= */
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 100vh;
+
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+
             text-align: center;
-            padding: 100px 20px 50px;
-            background: linear-gradient(135deg, #111827, #1e3a8a);
-            color: white;
+
+            padding: 120px 25px 70px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff 0%,
+                    #ffffff 55%,
+                    #f8fafc 100%
+                );
         }
+
 
         .hero-content {
             max-width: 850px;
         }
 
-        .hero h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
+
+        .hero-small {
+            color: #2563eb;
+
+            font-size: 16px;
+            font-weight: 700;
+
+            margin-bottom: 12px;
         }
+
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 75px);
+
+            line-height: 1.05;
+
+            font-weight: 800;
+
+            color: #0f172a;
+        }
+
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
 
         .hero h2 {
-            font-size: 28px;
-            color: #38bdf8;
-            margin-bottom: 20px;
+            margin-top: 18px;
+
+            font-size: 27px;
+
+            color: #475569;
         }
 
+
         .hero p {
-            font-size: 18px;
-            color: #e5e7eb;
             max-width: 700px;
-            margin: auto;
+
+            margin: 20px auto;
+
+            color: #64748b;
+
+            font-size: 17px;
         }
+
 
         .buttons {
             margin-top: 30px;
+
+            display: flex;
+            justify-content: center;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
         }
+
 
         .btn {
             display: inline-block;
-            padding: 12px 25px;
-            margin: 8px;
+
+            padding: 13px 23px;
+
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
+
+            font-weight: 700;
+
             transition: 0.3s;
         }
 
-        .primary {
-            background: #38bdf8;
-            color: #111827;
-        }
 
-        .primary:hover {
-            background: white;
-        }
-
-        .secondary {
-            border: 2px solid #38bdf8;
+        .btn-primary {
             color: white;
+            background: #2563eb;
         }
 
-        .secondary:hover {
-            background: #38bdf8;
-            color: #111827;
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+
+            transform: translateY(-2px);
         }
 
-        /* ================= GENERAL ================= */
+
+        .btn-secondary {
+            color: #2563eb;
+
+            background: white;
+
+            border: 2px solid #2563eb;
+        }
+
+
+        .btn-secondary:hover {
+            background: #eff6ff;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
 
         section {
-            padding: 80px 8%;
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 90px 25px;
         }
+
 
         .section-title {
             text-align: center;
-            font-size: 35px;
-            margin-bottom: 45px;
-            color: #111827;
+
+            margin-bottom: 50px;
         }
 
-        .section-title span {
-            color: #2563eb;
-        }
 
-        /* ================= ABOUT ================= */
+        .section-title h2 {
+            font-size: 36px;
 
-        .about {
-            background: white;
-        }
+            color: #0f172a;
 
-        .about-content {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-            font-size: 17px;
-            color: #555;
-        }
-
-        /* ================= SKILLS ================= */
-
-        .skills {
-            background: #f5f7fb;
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .skill {
-            background: white;
-            padding: 25px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .skill:hover {
-            transform: translateY(-5px);
-        }
-
-        /* ================= PROJECTS ================= */
-
-        .projects {
-            background: white;
-        }
-
-        .project-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: #f8fafc;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
-            border-top: 5px solid #2563eb;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .project-number {
-            color: #2563eb;
-            font-weight: bold;
             margin-bottom: 10px;
         }
 
-        .project-card h3 {
-            font-size: 24px;
+
+        .section-title p {
+            color: #64748b;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+
+            align-items: center;
+        }
+
+
+        .about-text h3 {
+            font-size: 27px;
+
+            color: #0f172a;
+
             margin-bottom: 15px;
-            color: #111827;
         }
 
-        .project-card p {
-            color: #555;
+
+        .about-text p {
+            color: #64748b;
+
             margin-bottom: 15px;
         }
 
-        .tech {
-            margin: 15px 0;
+
+        .about-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 8px 30px rgba(15, 23, 42, 0.07);
         }
 
-        .tech span {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1d4ed8;
-            padding: 5px 10px;
-            margin: 3px;
-            border-radius: 5px;
-            font-size: 13px;
+
+        .about-card div {
+            padding: 13px 0;
+
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        .project-btn {
-            display: inline-block;
-            margin-top: 15px;
+
+        .about-card div:last-child {
+            border-bottom: none;
+        }
+
+
+        .about-card strong {
+            color: #0f172a;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            position: relative;
+
+            max-width: 900px;
+
+            margin: auto;
+        }
+
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 20px;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 3px;
+
+            background: #bfdbfe;
+        }
+
+
+        .experience {
+            position: relative;
+
+            margin-bottom: 35px;
+
+            padding-left: 60px;
+        }
+
+
+        .experience::before {
+            content: "";
+
+            position: absolute;
+
+            left: 10px;
+
+            top: 8px;
+
+            width: 20px;
+
+            height: 20px;
+
             background: #2563eb;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 7px;
-            text-decoration: none;
+
+            border-radius: 50%;
+
+            border: 4px solid #dbeafe;
+        }
+
+
+        .experience-card {
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 8px 30px rgba(15, 23, 42, 0.07);
+
             transition: 0.3s;
         }
 
-        .project-btn:hover {
-            background: #1e40af;
+
+        .experience-card:hover {
+            transform: translateY(-4px);
         }
 
-        /* ================= CONTACT ================= */
 
-        .contact {
-            background: #111827;
-            color: white;
-            text-align: center;
+        .experience-card h3 {
+            font-size: 21px;
+
+            color: #0f172a;
         }
 
-        .contact .section-title {
-            color: white;
+
+        .experience-card h4 {
+            color: #2563eb;
+
+            margin: 5px 0;
         }
 
-        .contact p {
-            margin: 15px 0;
-            color: #d1d5db;
-            font-size: 17px;
+
+        .experience-date {
+            color: #64748b;
+
+            font-size: 14px;
+
+            font-weight: 600;
         }
 
-        .contact a {
-            color: #38bdf8;
-            text-decoration: none;
+
+        .experience-card p {
+            color: #64748b;
+
+            margin-top: 15px;
         }
 
-        .contact a:hover {
-            text-decoration: underline;
+
+        .experience-card ul {
+            margin: 15px 0 0 20px;
+
+            color: #64748b;
         }
 
-        .contact-buttons {
-            margin-top: 25px;
+
+        .experience-card li {
+            margin-bottom: 8px;
         }
 
-        /* ================= FOOTER ================= */
 
-        footer {
-            background: #030712;
-            color: #9ca3af;
-            text-align: center;
-            padding: 20px;
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .project-card {
+            background: white;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 30px rgba(15, 23, 42, 0.07);
+
+            transition: 0.3s;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .project-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 15px 35px rgba(15, 23, 42, 0.12);
+        }
+
+
+        .project-top {
+            height: 7px;
+
+            background: #2563eb;
+        }
+
+
+        .project-content {
+            padding: 25px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            height: 100%;
+        }
+
+
+        .project-number {
+            color: #2563eb;
+
+            font-size: 13px;
+
+            font-weight: 800;
+        }
+
+
+        .project-card h3 {
+            color: #0f172a;
+
+            font-size: 20px;
+
+            margin: 8px 0 12px;
+        }
+
+
+        .project-card p {
+            color: #64748b;
+
             font-size: 14px;
         }
 
-        /* ================= MOBILE ================= */
 
-        @media (max-width: 768px) {
+        .project-tech {
+            display: flex;
 
-            nav {
-                padding: 15px 5%;
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-top: 18px;
+        }
+
+
+        .project-tech span {
+            background: #eff6ff;
+
+            color: #1d4ed8;
+
+            padding: 5px 9px;
+
+            border-radius: 5px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .project-link {
+            display: inline-block;
+
+            margin-top: auto;
+
+            padding-top: 20px;
+
+            color: #2563eb;
+
+            font-size: 14px;
+
+            font-weight: 700;
+        }
+
+
+        .project-link:hover {
+            color: #1d4ed8;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-container {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+
+        .skill {
+            background: white;
+
+            color: #1e40af;
+
+            padding: 12px 20px;
+
+            border-radius: 30px;
+
+            border: 1px solid #dbeafe;
+
+            font-weight: 600;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.04);
+
+            transition: 0.3s;
+        }
+
+
+        .skill:hover {
+            transform: translateY(-3px);
+
+            background: #eff6ff;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-card {
+            max-width: 850px;
+
+            margin: 0 auto 20px;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 8px 30px rgba(15, 23, 42, 0.07);
+        }
+
+
+        .education-card h3 {
+            color: #0f172a;
+
+            margin-bottom: 5px;
+        }
+
+
+        .education-card p {
+            color: #64748b;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            max-width: 100%;
+
+            text-align: center;
+
+            background: #eff6ff;
+        }
+
+
+        .contact-inner {
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 0 25px;
+        }
+
+
+        .contact h2 {
+            font-size: 36px;
+
+            color: #0f172a;
+        }
+
+
+        .contact p {
+            color: #64748b;
+
+            margin: 15px 0 25px;
+        }
+
+
+        .contact-links {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+
+        .contact-links a {
+            color: #2563eb;
+
+            background: white;
+
+            padding: 11px 18px;
+
+            border-radius: 8px;
+
+            border: 1px solid #dbeafe;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+
+        .contact-links a:hover {
+            color: white;
+
+            background: #2563eb;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            background: #0f172a;
+
+            color: #94a3b8;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .nav-links {
+                gap: 12px;
+            }
+
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .nav-container {
                 flex-direction: column;
+
                 gap: 10px;
             }
 
-            nav ul {
-                gap: 15px;
-                flex-wrap: wrap;
+
+            .nav-links {
                 justify-content: center;
+
+                flex-wrap: wrap;
             }
 
-            .hero h1 {
-                font-size: 40px;
+
+            .hero {
+                padding-top: 150px;
             }
 
-            .hero h2 {
-                font-size: 23px;
-            }
 
             section {
-                padding: 70px 5%;
+                padding: 65px 20px;
+            }
+
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+
+            .timeline::before {
+                left: 12px;
+            }
+
+
+            .experience {
+                padding-left: 40px;
+            }
+
+
+            .experience::before {
+                left: 3px;
             }
 
         }
@@ -338,15 +832,20 @@
 <body>
 
 
-    <!-- ================= NAVBAR ================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-    <nav>
+<nav>
+
+    <div class="nav-container">
 
         <div class="logo">
             Bala Sundar
         </div>
 
-        <ul>
+
+        <ul class="nav-links">
 
             <li>
                 <a href="#home">Home</a>
@@ -357,11 +856,19 @@
             </li>
 
             <li>
-                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
             </li>
 
             <li>
                 <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
             </li>
 
             <li>
@@ -370,353 +877,298 @@
 
         </ul>
 
-    </nav>
+    </div>
+
+</nav>
 
 
-    <!-- ================= HOME ================= -->
 
-    <section class="hero" id="home">
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-        <div class="hero-content">
+<section class="hero" id="home">
 
-            <h1>
-                Hi, I'm Bala Sundar 👋
-            </h1>
+    <div class="hero-content">
 
-            <h2>
-                Data Analyst
-            </h2>
+        <div class="hero-small">
+            Hello, I'm
+        </div>
 
-            <p>
-                Aspiring Data Analyst passionate about transforming raw data
-                into meaningful insights using SQL, Excel, Power BI and
-                data visualization.
-            </p>
 
-            <div class="buttons">
+        <h1>
+            Bala <span>Sundar</span>
+        </h1>
 
-                <a href="#projects" class="btn primary">
-                    View My Projects
-                </a>
 
-                <a href="#contact" class="btn secondary">
-                    Contact Me
-                </a>
+        <h2>
+            Aspiring Data Analyst
+        </h2>
 
-            </div>
+
+        <p>
+            Computer Science Engineer passionate about
+            transforming data into meaningful business
+            insights using Python, SQL, Power BI and Excel.
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#projects"
+                class="btn btn-primary">
+
+                View My Projects
+
+            </a>
+
+
+            <a
+                href="#experience"
+                class="btn btn-secondary">
+
+                My Experience
+
+            </a>
+
+
+            <a
+                href="Bala Resume.pdf"
+                target="_blank"
+                class="btn btn-secondary">
+
+                View Resume
+
+            </a>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- ================= ABOUT ================= -->
 
-    <section class="about" id="about">
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
-        <h2 class="section-title">
-            About <span>Me</span>
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>
+            About Me
         </h2>
 
-        <div class="about-content">
+        <p>
+            Turning data into meaningful insights
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+
+        <div class="about-text">
+
+            <h3>
+                Data Analyst with a
+                problem-solving mindset
+            </h3>
+
 
             <p>
-                I am an aspiring Data Analyst with an interest in data
-                analysis, business intelligence and problem solving.
-                I enjoy working with datasets, finding patterns and
-                creating meaningful insights that can support better
-                business decisions.
+                I am a Computer Science Engineering
+                graduate with a strong interest in
+                Data Analytics and data-driven
+                decision-making.
             </p>
 
-            <br>
 
             <p>
-                I have worked on projects involving supermarket sales,
-                retail sales analysis and a Blood Matching Portal.
-                I am continuously improving my technical and analytical
+                I enjoy working with datasets,
+                cleaning and analyzing data,
+                identifying trends, building
+                dashboards and communicating
+                insights through visualizations.
+            </p>
+
+
+            <p>
+                My current focus is developing
+                practical projects using Python,
+                SQL, Excel and Power BI to strengthen
+                my analytical and business intelligence
                 skills.
             </p>
 
         </div>
 
-    </section>
 
 
-    <!-- ================= SKILLS ================= -->
+        <div class="about-card">
 
-    <section class="skills" id="skills">
-
-        <h2 class="section-title">
-            My <span>Skills</span>
-        </h2>
-
-        <div class="skills-container">
-
-            <div class="skill">
-                SQL
+            <div>
+                <strong>Role:</strong>
+                Aspiring Data Analyst
             </div>
 
-            <div class="skill">
-                Excel
+
+            <div>
+                <strong>Degree:</strong>
+                B.E. Computer Science Engineering
             </div>
 
-            <div class="skill">
-                Power BI
+
+            <div>
+                <strong>Location:</strong>
+                Cuddalore, Tamil Nadu
             </div>
 
-            <div class="skill">
-                Python
+
+            <div>
+                <strong>Focus:</strong>
+                Data Analysis & Business Intelligence
             </div>
 
-            <div class="skill">
-                Data Analysis
-            </div>
 
-            <div class="skill">
-                Data Visualization
-            </div>
-
-            <div class="skill">
-                MySQL
-            </div>
-
-            <div class="skill">
-                GitHub
+            <div>
+                <strong>Tools:</strong>
+                Python, SQL, Power BI, Excel
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- ================= PROJECTS ================= -->
 
-    <section class="projects" id="projects">
+<!-- =====================================================
+     INTERNSHIP EXPERIENCE
+===================================================== -->
 
-        <h2 class="section-title">
-            My <span>Projects</span>
-        </h2>
+<section id="experience">
 
-        <div class="project-container">
+    <div class="section-title">
 
-
-            <!-- PROJECT 1 -->
-
-            <div class="project-card">
-
-                <div class="project-number">
-                    PROJECT 01
-                </div>
-
-                <h3>
-                    🛒 Supermarket Sales Analysis
-                </h3>
-
-                <p>
-                    An end-to-end data analytics project analyzing
-                    supermarket transactions to identify revenue,
-                    profitability, customer behavior, product performance,
-                    branch performance and payment trends.
-                </p>
-
-                <div class="tech">
-
-                    <span>Python</span>
-                    <span>SQL</span>
-                    <span>MySQL</span>
-                    <span>Power BI</span>
-
-                </div>
-
-                <a
-                    href="https://github.com/balasundar2005/supermarket-sales-analysis"
-                    class="project-btn"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    View Project →
-
-                </a>
-
-            </div>
-
-
-            <!-- PROJECT 2 -->
-
-            <div class="project-card">
-
-                <div class="project-number">
-                    PROJECT 02
-                </div>
-
-                <h3>
-                    🛍️ Retail Sales Analysis
-                </h3>
-
-                <p>
-                    A retail sales analysis project using MySQL and
-                    Power BI to understand sales performance, customer
-                    behavior, product category performance, monthly
-                    revenue trends and top customers.
-                </p>
-
-                <div class="tech">
-
-                    <span>MySQL</span>
-                    <span>SQL</span>
-                    <span>Power BI</span>
-                    <span>Excel</span>
-
-                </div>
-
-                <a
-                    href="https://github.com/balasundar2005/retail-sales-analysis"
-                    class="project-btn"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    View Project →
-
-                </a>
-
-            </div>
-
-
-            <!-- PROJECT 3 -->
-
-            <div class="project-card">
-
-                <div class="project-number">
-                    PROJECT 03
-                </div>
-
-                <h3>
-                    🩸 Blood Matching Portal
-                </h3>
-
-                <p>
-                    A web-based Blood Matching Portal designed to help
-                    users find nearby blood banks where the required
-                    blood group is available. The project focuses on
-                    improving access to blood availability information.
-                </p>
-
-                <div class="tech">
-
-                    <span>React</span>
-                    <span>Node.js</span>
-                    <span>Express.js</span>
-                    <span>PostgreSQL</span>
-                    <span>Google Maps API</span>
-
-                </div>
-
-                <a
-                    href="https://github.com/balasundar2005/blood-harmony-pro"
-                    class="project-btn"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    View Project →
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section class="contact" id="contact">
-
-        <h2 class="section-title">
-            Contact <span>Me</span>
+        <h2>
+            Internship Experience
         </h2>
 
         <p>
-            Interested in working together or discussing a project?
+            Professional experience and practical exposure
         </p>
 
-
-        <p>
-            📧 Email:
-            <a href="mailto:balasundarsenthil@gmail.com">
-                balasundarsenthil@gmail.com
-            </a>
-        </p>
+    </div>
 
 
-        <p>
-            📱 Phone:
-            <a href="tel:+919080374685">
-                +91 9080374685
-            </a>
-        </p>
+    <div class="timeline">
 
 
-        <p>
-            💻 GitHub:
-            <a
-                href="https://github.com/balasundar2005"
-                target="_blank"
-                rel="noopener noreferrer">
+        <!-- SENNOVA -->
 
-                github.com/balasundar2005
+        <div class="experience">
 
-            </a>
-        </p>
+            <div class="experience-card">
+
+                <h3>
+                    Data Analyst Intern
+                </h3>
 
 
-        <p>
-            🔗 LinkedIn:
-            <a
-                href="https://www.linkedin.com/in/balasundar-s-890669259?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                Bala Sundar on LinkedIn
-
-            </a>
-        </p>
+                <h4>
+                    Sennova Innovations Pvt. Ltd.
+                </h4>
 
 
-        <div class="contact-buttons">
+                <div class="experience-date">
+                    Jan 05 – Apr 05, 2026
+                </div>
 
-            <a href="mailto:balasundarsenthil@gmail.com"
-               class="btn primary">
 
-                Email Me
+                <p>
+                    Worked on learner engagement data
+                    and applied data analysis techniques
+                    to identify performance and dropout
+                    patterns.
+                </p>
 
-            </a>
 
-            <a href="#home"
-               class="btn secondary">
+                <ul>
 
-                Back to Top ↑
+                    <li>
+                        Analyzed learner engagement data
+                        using Python and Pandas.
+                    </li>
 
-            </a>
+
+                    <li>
+                        Developed interactive dashboards
+                        using Power BI.
+                    </li>
+
+
+                    <li>
+                        Applied Machine Learning techniques
+                        to develop predictive models.
+                    </li>
+
+
+                    <li>
+                        Identified patterns to support
+                        improvements in student outcomes.
+                    </li>
+
+                </ul>
+
+            </div>
 
         </div>
 
-    </section>
 
 
-    <!-- ================= FOOTER ================= -->
+        <!-- FOIWE -->
 
-    <footer>
+        <div class="experience">
 
-        <p>
-            © 2026 Bala Sundar | Data Analyst Portfolio
-        </p>
+            <div class="experience-card">
 
-    </footer>
+                <h3>
+                    System Analyst (Moderation)
+                </h3>
 
 
-</body>
+                <h4>
+                    Foiwe Info Global Solutions
+                </h4>
 
-</html>
-```
+
+                <div class="experience-date">
+                    Jun 14 – Jul 23, 2025
+                </div>
+
+
+                <p>
+                    Worked on backend operations and
+                    content moderation for DAZN,
+                    supporting multi-region events
+                    and regional content management.
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        Managed backend operations for
+                        multi-region events.
+                    </li>
+
+
+                    <li>
+                        Worked with regional content
+         
