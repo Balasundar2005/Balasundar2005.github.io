@@ -1,3 +1,8 @@
+/* =========================================================
+   BALA SUNDAR | DATA ANALYST PORTFOLIO
+   LIGHT PROFESSIONAL THEME
+   ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,33 +10,46 @@
 }
 
 :root {
-    --background: #050816;
-    --background-2: #080b1c;
-    --surface: #0c1024;
-    --surface-2: #111631;
+    --background: #f7f9fc;
+    --background-2: #eef3f9;
 
-    --primary: #7c5cff;
-    --secondary: #25d9ff;
+    --surface: #ffffff;
+    --surface-2: #f8fafc;
 
-    --white: #f8f9ff;
-    --text: #d6d9e8;
-    --muted: #858ba5;
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --secondary: #0891b2;
 
-    --border: rgba(255,255,255,0.09);
+    --white: #ffffff;
+    --text: #172033;
+    --text-dark: #0f172a;
+    --muted: #64748b;
+    --muted-light: #94a3b8;
+
+    --border: #e2e8f0;
+    --border-dark: #cbd5e1;
+
+    --success: #16a34a;
+
+    --shadow-sm: 0 4px 15px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 15px 40px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 25px 70px rgba(15, 23, 42, 0.12);
 }
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
     background: var(--background);
     color: var(--text);
-
     font-family: "DM Sans", sans-serif;
-
     line-height: 1.6;
-
     overflow-x: hidden;
 }
 
@@ -40,76 +58,74 @@ a {
     text-decoration: none;
 }
 
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
 .navbar {
     position: fixed;
-
     width: 100%;
-
     top: 0;
     left: 0;
-
     z-index: 1000;
 
-    background: rgba(5,8,22,0.72);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    backdrop-filter: blur(20px);
-
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.85);
 }
 
 .nav-wrapper {
     width: min(1200px, 92%);
-
-    min-height: 78px;
-
+    min-height: 76px;
     margin: auto;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 }
 
 .brand {
     display: flex;
-
     align-items: center;
-
-    gap: 10px;
+    gap: 11px;
 }
 
 .brand-box {
-    width: 39px;
-    height: 39px;
+    width: 40px;
+    height: 40px;
 
     display: grid;
     place-items: center;
 
     border-radius: 10px;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--primary),
-            var(--secondary)
-        );
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
 
     color: white;
-
     font-weight: 800;
-
     font-size: 0.75rem;
+
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.2);
 }
 
 .brand strong {
     display: block;
 
-    color: var(--white);
+    color: var(--text-dark);
 
     font-family: "Space Grotesk";
-
-    font-size: 0.82rem;
+    font-size: 0.85rem;
 }
 
 .brand span {
@@ -122,44 +138,80 @@ a {
 
 nav {
     display: flex;
-
     gap: 28px;
 }
 
 nav a {
-    color: var(--muted);
+    position: relative;
 
+    color: var(--muted);
     font-size: 0.72rem;
 
     transition: 0.3s;
 }
 
+nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 5px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transition: 0.3s;
+}
+
 nav a:hover {
-    color: white;
+    color: var(--primary);
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 .nav-contact {
-    padding: 9px 15px;
+    padding: 10px 17px;
 
-    border: 1px solid var(--border);
-
+    border: 1px solid var(--border-dark);
     border-radius: 8px;
 
-    font-size: 0.7rem;
+    background: white;
 
-    color: white;
+    color: var(--text-dark);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    box-shadow: var(--shadow-sm);
 
     transition: 0.3s;
 }
 
 .nav-contact:hover {
+    color: white;
+
     border-color: var(--primary);
 
-    color: var(--secondary);
+    background: var(--primary);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2);
 }
 
-
-/* ================= HERO ================= */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero {
     min-height: 100vh;
@@ -167,38 +219,49 @@ nav a:hover {
     position: relative;
 
     display: flex;
-
     align-items: center;
 
     overflow: hidden;
 
-    padding-top: 78px;
+    padding-top: 76px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(79, 70, 229, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(8, 145, 178, 0.08),
+            transparent 30%
+        ),
+        #f8fafc;
 }
 
 .grid-background {
     position: absolute;
-
     inset: 0;
 
-    opacity: 0.18;
+    opacity: 0.5;
 
     background-image:
         linear-gradient(
-            rgba(124,92,255,0.18) 1px,
+            rgba(79, 70, 229, 0.045) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(124,92,255,0.18) 1px,
+            rgba(79, 70, 229, 0.045) 1px,
             transparent 1px
         );
 
-    background-size: 60px 60px;
+    background-size: 55px 55px;
 
     mask-image: linear-gradient(
         to bottom,
         black,
-        transparent
+        transparent 90%
     );
 }
 
@@ -207,30 +270,35 @@ nav a:hover {
 
     border-radius: 50%;
 
-    filter: blur(110px);
+    filter: blur(100px);
+
+    pointer-events: none;
 }
 
 .glow-1 {
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
 
-    background: rgba(124,92,255,0.17);
+    background: rgba(79, 70, 229, 0.08);
 
     top: -150px;
     left: -100px;
 }
 
 .glow-2 {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
 
-    background: rgba(37,217,255,0.09);
+    background: rgba(8, 145, 178, 0.08);
 
-    right: -150px;
+    right: -120px;
     bottom: -100px;
 }
 
 .hero-wrapper {
+    position: relative;
+    z-index: 2;
+
     width: min(1200px, 92%);
 
     margin: auto;
@@ -246,11 +314,14 @@ nav a:hover {
     padding: 80px 0;
 }
 
+/* =========================================================
+   HERO LEFT
+   ========================================================= */
+
 .available {
     width: fit-content;
 
     display: flex;
-
     align-items: center;
 
     gap: 8px;
@@ -259,34 +330,38 @@ nav a:hover {
 
     border-radius: 50px;
 
-    border: 1px solid rgba(37,217,255,0.2);
+    border: 1px solid rgba(22, 163, 74, 0.2);
 
-    background: rgba(37,217,255,0.04);
+    background: rgba(22, 163, 74, 0.06);
 
-    color: #82eaff;
+    color: #15803d;
 
     font-size: 0.57rem;
 
+    font-weight: 700;
+
     letter-spacing: 1.5px;
 
-    margin-bottom: 32px;
+    margin-bottom: 30px;
 }
 
 .available span {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
 
     border-radius: 50%;
 
-    background: #36e58b;
+    background: var(--success);
 
-    box-shadow: 0 0 10px #36e58b;
+    box-shadow: 0 0 10px rgba(22, 163, 74, 0.4);
 }
 
 .hero-small {
     color: var(--muted);
 
     font-size: 0.65rem;
+
+    font-weight: 600;
 
     letter-spacing: 4px;
 
@@ -296,9 +371,13 @@ nav a:hover {
 .hero h1 {
     font-family: "Space Grotesk";
 
-    color: white;
+    color: var(--text-dark);
 
-    font-size: clamp(4rem, 8vw, 7.3rem);
+    font-size: clamp(
+        4rem,
+        8vw,
+        7.3rem
+    );
 
     line-height: 0.9;
 
@@ -311,22 +390,25 @@ nav a:hover {
     background:
         linear-gradient(
             90deg,
-            #ffffff,
-            #8d78ff,
-            #25d9ff
+            #111827,
+            var(--primary),
+            var(--secondary)
         );
 
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
 }
 
 .hero h2 {
     margin-top: 25px;
 
-    color: #dfe3f1;
+    color: #334155;
 
-    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    font-size: clamp(
+        1.5rem,
+        3vw,
+        2.3rem
+    );
 
     font-weight: 500;
 }
@@ -345,9 +427,12 @@ nav a:hover {
     margin: 20px 0 30px;
 }
 
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
 .hero-actions {
     display: flex;
-
     gap: 12px;
 }
 
@@ -365,7 +450,7 @@ nav a:hover {
 
     font-size: 0.7rem;
 
-    font-weight: 600;
+    font-weight: 700;
 
     transition: 0.3s;
 }
@@ -377,31 +462,43 @@ nav a:hover {
         linear-gradient(
             100deg,
             var(--primary),
-            #6550e8
+            #6366f1
         );
 
     box-shadow:
-        0 10px 35px rgba(124,92,255,0.22);
+        0 10px 30px
+        rgba(79, 70, 229, 0.2);
 }
 
 .primary-button:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 15px 40px rgba(124,92,255,0.35);
+        0 15px 35px
+        rgba(79, 70, 229, 0.3);
 }
 
 .secondary-button {
-    border: 1px solid var(--border);
+    color: var(--text-dark);
 
-    color: white;
+    background: white;
+
+    border: 1px solid var(--border-dark);
+
+    box-shadow: var(--shadow-sm);
 }
 
 .secondary-button:hover {
-    border-color: var(--secondary);
+    color: var(--primary);
 
-    color: var(--secondary);
+    border-color: var(--primary);
+
+    transform: translateY(-3px);
 }
+
+/* =========================================================
+   HERO LINKS
+   ========================================================= */
 
 .hero-links {
     display: flex;
@@ -422,13 +519,14 @@ nav a:hover {
 }
 
 .hero-links a:hover {
-    color: white;
+    color: var(--primary);
 
-    border-color: var(--secondary);
+    border-color: var(--primary);
 }
 
-
-/* ================= ANALYTICS WINDOW ================= */
+/* =========================================================
+   ANALYTICS WINDOW
+   ========================================================= */
 
 .hero-right {
     position: relative;
@@ -445,15 +543,9 @@ nav a:hover {
 
     border: 1px solid var(--border);
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(17,22,49,0.96),
-            rgba(8,12,29,0.98)
-        );
+    background: white;
 
-    box-shadow:
-        0 40px 100px rgba(0,0,0,0.4);
+    box-shadow: var(--shadow-lg);
 }
 
 .window-top {
@@ -469,7 +561,7 @@ nav a:hover {
 
     border-bottom: 1px solid var(--border);
 
-    background: rgba(255,255,255,0.015);
+    background: #f8fafc;
 }
 
 .window-title {
@@ -479,26 +571,30 @@ nav a:hover {
 
     gap: 8px;
 
-    color: #7f86a3;
+    color: #64748b;
 
     font-size: 0.55rem;
 
     letter-spacing: 2px;
+
+    font-weight: 700;
 }
 
 .window-dot {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
 
     border-radius: 50%;
 
     background: var(--secondary);
 
-    box-shadow: 0 0 8px var(--secondary);
+    box-shadow:
+        0 0 8px
+        rgba(8, 145, 178, 0.4);
 }
 
 .window-controls {
-    color: #4d536c;
+    color: #94a3b8;
 
     font-size: 0.65rem;
 
@@ -522,8 +618,12 @@ nav a:hover {
 }
 
 .analytics-heading strong {
-    color: var(--secondary);
+    color: var(--primary);
 }
+
+/* =========================================================
+   CHART
+   ========================================================= */
 
 .chart-area {
     height: 160px;
@@ -539,8 +639,8 @@ nav a:hover {
     background:
         linear-gradient(
             180deg,
-            rgba(124,92,255,0.08),
-            transparent
+            rgba(79, 70, 229, 0.06),
+            rgba(8, 145, 178, 0.02)
         );
 }
 
@@ -549,7 +649,7 @@ nav a:hover {
 
     justify-content: space-between;
 
-    color: #555c78;
+    color: #94a3b8;
 
     font-size: 0.45rem;
 
@@ -573,7 +673,8 @@ nav a:hover {
 .bar {
     width: 30px;
 
-    border-radius: 5px 5px 2px 2px;
+    border-radius:
+        5px 5px 2px 2px;
 
     position: relative;
 
@@ -585,9 +686,11 @@ nav a:hover {
         );
 
     box-shadow:
-        0 0 20px rgba(124,92,255,0.18);
+        0 0 18px
+        rgba(79, 70, 229, 0.12);
 
-    animation: barGrow 1.5s ease forwards;
+    animation:
+        barGrow 1.5s ease forwards;
 }
 
 .bar span {
@@ -599,19 +702,34 @@ nav a:hover {
 
     text-align: center;
 
-    color: #777e99;
+    color: #64748b;
 
     font-size: 0.42rem;
+
+    font-weight: 700;
 }
 
-.b1 { height: 45%; }
-.b2 { height: 67%; }
-.b3 { height: 54%; }
-.b4 { height: 86%; }
-.b5 { height: 73%; }
+.b1 {
+    height: 45%;
+}
+
+.b2 {
+    height: 67%;
+}
+
+.b3 {
+    height: 54%;
+}
+
+.b4 {
+    height: 86%;
+}
+
+.b5 {
+    height: 73%;
+}
 
 @keyframes barGrow {
-
     from {
         transform: scaleY(0);
         transform-origin: bottom;
@@ -621,6 +739,10 @@ nav a:hover {
         transform: scaleY(1);
     }
 }
+
+/* =========================================================
+   TOOL LIST
+   ========================================================= */
 
 .tool-list {
     border-top: 1px solid var(--border);
@@ -660,15 +782,15 @@ nav a:hover {
 }
 
 .sql {
-    background: #387aab;
+    background: #2563eb;
 }
 
 .powerbi {
-    background: #d5a900;
+    background: #eab308;
 }
 
 .excel {
-    background: #217346;
+    background: #15803d;
 }
 
 .tool-row div:nth-child(2) {
@@ -678,7 +800,7 @@ nav a:hover {
 .tool-row strong {
     display: block;
 
-    color: white;
+    color: var(--text-dark);
 
     font-size: 0.68rem;
 }
@@ -690,10 +812,14 @@ nav a:hover {
 }
 
 .tool-row > b {
-    color: var(--secondary);
+    color: var(--primary);
 
     font-size: 0.55rem;
 }
+
+/* =========================================================
+   FLOATING CARDS
+   ========================================================= */
 
 .floating-card {
     position: absolute;
@@ -708,11 +834,11 @@ nav a:hover {
 
     border-radius: 10px;
 
-    background: rgba(10,14,33,0.92);
+    background: rgba(255,255,255,0.95);
 
     backdrop-filter: blur(10px);
 
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    box-shadow: var(--shadow-md);
 }
 
 .floating-card span {
@@ -724,7 +850,7 @@ nav a:hover {
 }
 
 .floating-card strong {
-    color: white;
+    color: var(--text-dark);
 
     font-size: 0.9rem;
 }
@@ -741,8 +867,9 @@ nav a:hover {
     top: 55px;
 }
 
-
-/* ================= COMMON SECTIONS ================= */
+/* =========================================================
+   SECTIONS
+   ========================================================= */
 
 .section {
     padding: 130px 0;
@@ -761,7 +888,7 @@ nav a:hover {
 }
 
 .section-tag {
-    color: var(--secondary);
+    color: var(--primary);
 
     font-size: 0.58rem;
 
@@ -775,11 +902,15 @@ nav a:hover {
 
     margin-top: 17px;
 
-    color: white;
+    color: var(--text-dark);
 
     font-family: "Space Grotesk";
 
-    font-size: clamp(2.5rem, 5vw, 4.7rem);
+    font-size: clamp(
+        2.5rem,
+        5vw,
+        4.7rem
+    );
 
     line-height: 1;
 
@@ -789,14 +920,15 @@ nav a:hover {
 .section-intro h2 span {
     display: block;
 
-    color: #7d83a0;
+    color: #94a3b8;
 }
 
-
-/* ================= ABOUT ================= */
+/* =========================================================
+   ABOUT
+   ========================================================= */
 
 .about-section {
-    background: var(--background);
+    background: white;
 }
 
 .about-layout {
@@ -824,7 +956,7 @@ nav a:hover {
 }
 
 .about-number strong {
-    color: #444a64;
+    color: #cbd5e1;
 
     font-family: "Space Grotesk";
 
@@ -838,7 +970,7 @@ nav a:hover {
 }
 
 .large-text {
-    color: white;
+    color: var(--text-dark);
 
     font-family: "Space Grotesk";
 
@@ -876,7 +1008,7 @@ nav a:hover {
 }
 
 .about-stats strong {
-    color: white;
+    color: var(--text-dark);
 
     font-family: "Space Grotesk";
 
@@ -893,17 +1025,19 @@ nav a:hover {
     letter-spacing: 1px;
 }
 
-
-/* ================= SKILLS ================= */
+/* =========================================================
+   SKILLS
+   ========================================================= */
 
 .skills-section {
-    background: var(--background-2);
+    background: #f1f5f9;
 }
 
 .skills-container {
     display: grid;
 
-    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-columns:
+        1.3fr 1fr 1fr;
 
     gap: 15px;
 }
@@ -918,7 +1052,9 @@ nav a:hover {
 
     border-radius: 14px;
 
-    background: var(--surface);
+    background: white;
+
+    box-shadow: var(--shadow-sm);
 
     transition: 0.3s;
 }
@@ -929,8 +1065,8 @@ nav a:hover {
     background:
         linear-gradient(
             145deg,
-            rgba(124,92,255,0.12),
-            var(--surface)
+            rgba(79,70,229,0.07),
+            white
         );
 }
 
@@ -938,12 +1074,15 @@ nav a:hover {
 .skill-card:hover {
     transform: translateY(-6px);
 
-    border-color: rgba(124,92,255,0.45);
+    border-color:
+        rgba(79,70,229,0.35);
+
+    box-shadow: var(--shadow-md);
 }
 
 .skill-number,
 .skill-card > span {
-    color: #575d79;
+    color: #94a3b8;
 
     font-size: 0.55rem;
 }
@@ -951,7 +1090,7 @@ nav a:hover {
 .big-icon {
     margin-top: 70px;
 
-    color: var(--secondary);
+    color: var(--primary);
 
     font-family: "Space Grotesk";
 
@@ -962,7 +1101,7 @@ nav a:hover {
 
 .skill-main h3,
 .skill-card h3 {
-    color: white;
+    color: var(--text-dark);
 
     font-family: "Space Grotesk";
 
@@ -1005,7 +1144,9 @@ nav a:hover {
 .experience-tags span {
     padding: 5px 8px;
 
-    color: #aeb4cb;
+    color: #475569;
+
+    background: #f8fafc;
 
     border: 1px solid var(--border);
 
@@ -1014,11 +1155,12 @@ nav a:hover {
     font-size: 0.52rem;
 }
 
-
-/* ================= EXPERIENCE ================= */
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
 
 .experience-section {
-    background: var(--background);
+    background: white;
 }
 
 .timeline {
@@ -1035,14 +1177,15 @@ nav a:hover {
     left: 21px;
 
     top: 0;
+
     bottom: 0;
 
-    width: 1px;
+    width: 2px;
 
     background:
         linear-gradient(
             var(--primary),
-            transparent
+            rgba(79,70,229,0.05)
         );
 }
 
@@ -1051,7 +1194,8 @@ nav a:hover {
 
     display: grid;
 
-    grid-template-columns: 45px 130px 1fr;
+    grid-template-columns:
+        45px 130px 1fr;
 
     gap: 30px;
 
@@ -1068,25 +1212,34 @@ nav a:hover {
 
     border-radius: 50%;
 
-    border: 1px solid var(--primary);
+    border: 2px solid
+        rgba(79,70,229,0.3);
 
-    background: var(--background);
+    background: white;
 
     color: var(--primary);
 
     font-size: 0.58rem;
 
+    font-weight: 700;
+
     z-index: 2;
+
+    box-shadow:
+        0 0 0 6px
+        rgba(79,70,229,0.04);
 }
 
 .timeline-date {
     padding-top: 10px;
 
-    color: #666d87;
+    color: #64748b;
 
     font-size: 0.6rem;
 
     line-height: 1.6;
+
+    font-weight: 600;
 }
 
 .timeline-content {
@@ -1096,19 +1249,22 @@ nav a:hover {
 
     border-radius: 13px;
 
-    background: var(--surface);
+    background: #f8fafc;
 
     transition: 0.3s;
 }
 
 .timeline-content:hover {
-    border-color: rgba(37,217,255,0.3);
+    border-color:
+        rgba(79,70,229,0.3);
 
     transform: translateX(5px);
+
+    box-shadow: var(--shadow-md);
 }
 
 .company {
-    color: var(--secondary);
+    color: var(--primary);
 
     font-size: 0.58rem;
 
@@ -1118,7 +1274,7 @@ nav a:hover {
 }
 
 .timeline-content h3 {
-    color: white;
+    color: var(--text-dark);
 
     font-family: "Space Grotesk";
 
@@ -1137,11 +1293,12 @@ nav a:hover {
     margin-bottom: 18px;
 }
 
-
-/* ================= PROJECTS ================= */
+/* =========================================================
+   PROJECTS
+   ========================================================= */
 
 .projects-section {
-    background: var(--background-2);
+    background: #f1f5f9;
 }
 
 .project-grid {
@@ -1159,7 +1316,9 @@ nav a:hover {
 
     border-radius: 15px;
 
-    background: var(--surface);
+    background: white;
+
+    box-shadow: var(--shadow-sm);
 
     transition: 0.4s;
 }
@@ -1167,10 +1326,10 @@ nav a:hover {
 .project:hover {
     transform: translateY(-8px);
 
-    border-color: rgba(124,92,255,0.45);
+    border-color:
+        rgba(79,70,229,0.3);
 
-    box-shadow:
-        0 30px 80px rgba(0,0,0,0.3);
+    box-shadow: var(--shadow-lg);
 }
 
 .project-large {
@@ -1188,13 +1347,13 @@ nav a:hover {
 }
 
 .project-no {
-    color: #555c76;
+    color: #94a3b8;
 
     font-size: 0.58rem;
 }
 
 .project-type {
-    color: var(--secondary);
+    color: var(--primary);
 
     font-size: 0.5rem;
 
@@ -1202,6 +1361,10 @@ nav a:hover {
 
     font-weight: 700;
 }
+
+/* =========================================================
+   PROJECT VISUALS
+   ========================================================= */
 
 .project-visual {
     height: 250px;
@@ -1217,334 +1380,30 @@ nav a:hover {
     border: 1px solid var(--border);
 }
 
+/* SUPERMARKET */
+
 .supermarket-visual {
     padding: 25px;
 
     background:
         linear-gradient(
             145deg,
-            #10183a,
-            #0a1025
+            #eef2ff,
+            #ecfeff
         );
 }
 
 .visual-header {
-    color: #707795;
+    color: #64748b;
 
     font-size: 0.5rem;
 
     letter-spacing: 2px;
+
+    font-weight: 700;
 }
 
 .fake-chart {
     height: 145px;
 
-    display: flex;
-
-    align-items: end;
-
-    gap: 15px;
-
-    margin-top: 25px;
-
-    border-bottom: 1px solid #242b48;
-}
-
-.fake-chart div {
-    width: 11%;
-
-    border-radius: 4px 4px 0 0;
-
-    background:
-        linear-gradient(
-            to top,
-            var(--primary),
-            var(--secondary)
-        );
-}
-
-.visual-kpis {
-    display: flex;
-
-    gap: 20px;
-
-    margin-top: 12px;
-
-    color: #646b85;
-
-    font-size: 0.45rem;
-}
-
-.retail-visual {
-    display: grid;
-
-    place-items: center;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(124,92,255,0.18),
-            transparent 60%
-        );
-}
-
-.retail-circle {
-    width: 120px;
-    height: 120px;
-
-    display: grid;
-
-    place-items: center;
-
-    align-content: center;
-
-    border: 1px solid var(--primary);
-
-    border-radius: 50%;
-
-    box-shadow:
-        0 0 50px rgba(124,92,255,0.15);
-}
-
-.retail-circle strong {
-    color: white;
-
-    font-family: "Space Grotesk";
-
-    font-size: 1rem;
-}
-
-.retail-circle span {
-    color: var(--secondary);
-
-    font-size: 0.48rem;
-
-    letter-spacing: 2px;
-}
-
-.retail-lines {
-    position: absolute;
-
-    width: 70%;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-}
-
-.retail-lines i {
-    width: 20px;
-    height: 20px;
-
-    border: 1px solid #353c5d;
-
-    border-radius: 50%;
-}
-
-.blood-visual {
-    display: grid;
-
-    place-items: center;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,70,100,0.13),
-            transparent 60%
-        );
-}
-
-.blood-symbol {
-    width: 75px;
-    height: 75px;
-
-    display: grid;
-
-    place-items: center;
-
-    border: 1px solid #ff5577;
-
-    border-radius: 50%;
-
-    color: #ff5577;
-
-    font-size: 2rem;
-
-    box-shadow:
-        0 0 50px rgba(255,70,100,0.15);
-}
-
-.blood-text {
-    position: absolute;
-
-    bottom: 20px;
-    left: 22px;
-
-    color: #8b5261;
-
-    font-size: 0.5rem;
-
-    letter-spacing: 2px;
-}
-
-.blood-orbit {
-    position: absolute;
-
-    border: 1px solid rgba(255,85,119,0.18);
-
-    border-radius: 50%;
-}
-
-.orbit-one {
-    width: 170px;
-    height: 70px;
-
-    transform: rotate(25deg);
-}
-
-.orbit-two {
-    width: 220px;
-    height: 100px;
-
-    transform: rotate(-25deg);
-}
-
-.project-info {
-    padding: 25px;
-}
-
-.project-info h3 {
-    color: white;
-
-    font-family: "Space Grotesk";
-
-    font-size: 1.2rem;
-
-    line-height: 1.3;
-
-    margin-bottom: 12px;
-}
-
-.project-info p {
-    color: var(--muted);
-
-    font-size: 0.73rem;
-
-    margin-bottom: 18px;
-}
-
-.project-tech {
-    margin-bottom: 20px;
-}
-
-.project-info > a {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    color: white;
-
-    font-size: 0.62rem;
-
-    border-bottom: 1px solid var(--secondary);
-
-    padding-bottom: 3px;
-}
-
-
-/* ================= EDUCATION ================= */
-
-.education-section {
-    background: var(--background);
-}
-
-.education-list {
-    border-top: 1px solid var(--border);
-}
-
-.education-item {
-    display: grid;
-
-    grid-template-columns: 150px 1fr 100px;
-
-    align-items: center;
-
-    gap: 30px;
-
-    padding: 27px 0;
-
-    border-bottom: 1px solid var(--border);
-
-    transition: 0.3s;
-}
-
-.education-item:hover {
-    padding-left: 10px;
-}
-
-.education-year {
-    color: var(--secondary);
-
-    font-size: 0.6rem;
-
-    letter-spacing: 1px;
-}
-
-.education-item h3 {
-    color: white;
-
-    font-family: "Space Grotesk";
-
-    font-size: 1rem;
-}
-
-.education-item p {
-    color: var(--muted);
-
-    font-size: 0.65rem;
-
-    margin-top: 4px;
-}
-
-.education-item strong {
-    color: white;
-
-    text-align: right;
-
-    font-size: 0.75rem;
-}
-
-
-/* ================= CONTACT ================= */
-
-.contact-section {
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 150px 0;
-
-    background:
-        linear-gradient(
-            145deg,
-            #0a0d21,
-            #090c1a
-        );
-
-    text-align: center;
-}
-
-.contact-glow {
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    top: -300px;
-    left: 50%;
-
-    transform: translateX(-50%)
+  
