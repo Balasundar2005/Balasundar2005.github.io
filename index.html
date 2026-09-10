@@ -15,258 +15,336 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #222;
             line-height: 1.6;
         }
 
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #020617;
-            padding: 18px 8%;
-            z-index: 1000;
-        }
-
+        /* NAVBAR */
         nav {
+            background: #111827;
+            color: white;
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo {
+        nav h2 {
             color: #38bdf8;
-            font-size: 24px;
-            font-weight: bold;
         }
 
         nav ul {
-            display: flex;
             list-style: none;
+            display: flex;
             gap: 25px;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
+            font-weight: 500;
         }
 
         nav ul li a:hover {
             color: #38bdf8;
         }
 
-        section {
-            padding: 100px 8%;
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            color: white;
         }
 
-        #home {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
+        .hero-content {
+            max-width: 850px;
         }
 
         .hero h1 {
-            font-size: 52px;
-        }
-
-        .hero h1 span {
-            color: #38bdf8;
+            font-size: 55px;
+            margin-bottom: 10px;
         }
 
         .hero h2 {
-            color: #94a3b8;
-            margin: 10px 0;
+            color: #38bdf8;
+            margin-bottom: 20px;
+            font-size: 30px;
         }
 
         .hero p {
-            max-width: 700px;
-            color: #cbd5e1;
-            margin: 20px 0;
+            font-size: 18px;
+            color: #e5e7eb;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            background: #38bdf8;
-            color: #020617;
-            padding: 11px 22px;
-            margin-right: 10px;
+            padding: 12px 24px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .secondary {
+            border: 1px solid #38bdf8;
+            color: white;
         }
 
         .btn:hover {
-            background: #0ea5e9;
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        /* GENERAL */
+        section {
+            padding: 80px 8%;
         }
 
         .section-title {
             text-align: center;
-            color: #38bdf8;
-            font-size: 35px;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
 
+        .section-title h2 {
+            font-size: 35px;
+            color: #111827;
+        }
+
+        .section-title p {
+            color: #64748b;
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
         .about {
-            max-width: 850px;
+            max-width: 900px;
             margin: auto;
             text-align: center;
-            color: #cbd5e1;
             font-size: 18px;
+            color: #475569;
         }
 
         /* SKILLS */
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .skill {
-            background: #1e293b;
-            padding: 12px 20px;
-            border-radius: 6px;
-            color: #38bdf8;
-            border: 1px solid #334155;
-        }
-
-        /* PROJECTS */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .project {
-            background: #1e293b;
-            padding: 28px;
+            background: white;
+            padding: 20px;
+            text-align: center;
             border-radius: 10px;
-            border: 1px solid #334155;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
             transition: 0.3s;
         }
 
-        .project:hover {
-            transform: translateY(-7px);
-            border-color: #38bdf8;
-        }
-
-        .project h3 {
-            color: #38bdf8;
-            font-size: 21px;
-            margin-bottom: 15px;
-        }
-
-        .project p {
-            color: #cbd5e1;
-            margin-bottom: 18px;
-        }
-
-        .tech {
-            color: #94a3b8;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .project a {
-            display: inline-block;
-            background: #38bdf8;
-            color: #020617;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* INTERNSHIP */
-
-        .internship {
+        /* EXPERIENCE */
+        .experience-container {
             max-width: 900px;
             margin: auto;
-            background: #1e293b;
-            padding: 30px;
-            border-left: 4px solid #38bdf8;
-            border-radius: 8px;
         }
 
-        .internship h3 {
-            color: #38bdf8;
+        .experience-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #38bdf8;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .experience-card h3 {
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .experience-card h4 {
+            color: #0284c7;
             margin-bottom: 8px;
         }
 
-        .internship p,
-        .internship li {
-            color: #cbd5e1;
+        .experience-card p {
+            color: #475569;
         }
 
-        .internship ul {
-            padding-left: 20px;
-            margin-top: 15px;
+        /* PROJECTS */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        /* CONTACT */
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
 
-        .contact {
+        .project-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .project-number {
+            color: #0284c7;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .project-card h3 {
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #64748b;
+            margin-bottom: 18px;
+            flex-grow: 1;
+        }
+
+        .tech {
+            margin-bottom: 18px;
+        }
+
+        .tech span {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 5px 10px;
+            margin: 3px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .project-link {
+            text-decoration: none;
+            background: #111827;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 5px;
             text-align: center;
         }
 
-        .contact p {
-            margin: 12px;
-            color: #cbd5e1;
+        .project-link:hover {
+            background: #0284c7;
         }
 
-        .contact a {
+        /* EDUCATION */
+        .education-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .education-card h3 {
+            color: #111827;
+        }
+
+        .education-card p {
+            color: #64748b;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact-info {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-info p {
+            margin: 12px 0;
+            font-size: 17px;
+        }
+
+        .contact-info a {
             color: #38bdf8;
             text-decoration: none;
         }
 
+        /* FOOTER */
         footer {
-            text-align: center;
             background: #020617;
-            padding: 25px;
             color: #94a3b8;
+            text-align: center;
+            padding: 20px;
         }
 
         /* MOBILE */
-
-        @media (max-width: 900px) {
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            nav ul {
-                gap: 12px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            header {
-                padding: 15px 5%;
-            }
+        @media (max-width: 768px) {
 
             nav {
                 flex-direction: column;
-                gap: 12px;
+                gap: 15px;
             }
 
             nav ul {
+                gap: 12px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
-            section {
-                padding: 90px 5%;
+            .hero h1 {
+                font-size: 38px;
             }
 
-            .hero {
-                text-align: center;
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            section {
+                padding: 60px 5%;
             }
         }
     </style>
@@ -274,267 +352,466 @@
 
 <body>
 
-<!-- NAVIGATION -->
-
-<header>
+    <!-- NAVIGATION -->
     <nav>
-        <div class="logo">Bala Sundar</div>
+        <h2>Bala Sundar</h2>
 
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#internship">Internship</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-</header>
 
 
-<!-- HOME -->
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-<section id="home">
-    <div class="hero">
+        <div class="hero-content">
 
-        <h1>Hello, I'm <span>Bala Sundar</span></h1>
+            <h1>Bala Sundar</h1>
 
-        <h2>Data Analyst</h2>
-
-        <p>
-            Aspiring Data Analyst with skills in Python, SQL, Excel and Power BI.
-            Interested in transforming data into meaningful insights and
-            supporting data-driven business decisions.
-        </p>
-
-        <a href="#projects" class="btn">View Projects</a>
-
-        <a href="https://github.com/balasundar2005"
-           target="_blank"
-           class="btn">
-            GitHub
-        </a>
-
-    </div>
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-    <h2 class="section-title">About Me</h2>
-
-    <div class="about">
-
-        <p>
-            I am an aspiring Data Analyst passionate about data analysis,
-            visualization and problem solving. I have worked on projects
-            involving sales data analysis, SQL databases, Python and
-            Power BI dashboards. I am looking for opportunities to apply
-            my analytical skills in a professional environment.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-    <h2 class="section-title">Skills</h2>
-
-    <div class="skills">
-
-        <div class="skill">Python</div>
-        <div class="skill">SQL</div>
-        <div class="skill">MySQL</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Excel</div>
-        <div class="skill">Data Analysis</div>
-        <div class="skill">Data Visualization</div>
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">GitHub</div>
-        <div class="skill">VS Code</div>
-
-    </div>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-    <h2 class="section-title">My Projects</h2>
-
-    <div class="projects">
-
-        <!-- PROJECT 1 -->
-
-        <div class="project">
-
-            <h3>Supermarket Sales Analysis</h3>
+            <h2>Data Analyst</h2>
 
             <p>
-                Analyzed supermarket sales data to identify revenue,
-                product performance, customer trends and sales patterns.
-                Created SQL analysis and an interactive Power BI dashboard
-                to generate business insights.
+                Aspiring Data Analyst with strong interest in data analysis,
+                visualization and business intelligence. Skilled in Python,
+                SQL, MySQL, Excel and Power BI, with hands-on experience
+                working on real-world data projects.
             </p>
 
-            <div class="tech">
-                Python • MySQL • Power BI • Excel
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View Projects
+                </a>
+
+                <a href="Bala Resume.pdf"
+                   class="btn secondary"
+                   target="_blank">
+                    View Resume
+                </a>
+
+                <a href="https://github.com/balasundar2005"
+                   class="btn secondary"
+                   target="_blank">
+                    GitHub
+                </a>
+
             </div>
 
-            <a href="https://github.com/balasundar2005/supermarket-sales-analysis"
-               target="_blank">
-                View Project
-            </a>
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Data Analyst | Problem Solver | Business Intelligence Enthusiast</p>
+        </div>
+
+        <div class="about">
+
+            <p>
+                I am an aspiring Data Analyst interested in transforming
+                raw data into meaningful insights that support better
+                business decisions. I enjoy working with datasets,
+                performing data cleaning and analysis, creating SQL queries,
+                and developing interactive dashboards using Power BI.
+            </p>
+
+            <br>
+
+            <p>
+                I have developed projects involving supermarket sales,
+                retail sales analysis and a blood donation matching system.
+                I am continuously improving my technical and analytical
+                skills while building practical projects for a career
+                in data analytics.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <div class="section-title">
+            <h2>Skills</h2>
+            <p>Technical skills and tools</p>
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill">Python</div>
+
+            <div class="skill">Pandas</div>
+
+            <div class="skill">SQL</div>
+
+            <div class="skill">MySQL</div>
+
+            <div class="skill">Power BI</div>
+
+            <div class="skill">Microsoft Excel</div>
+
+            <div class="skill">Data Analysis</div>
+
+            <div class="skill">Data Visualization</div>
+
+            <div class="skill">GitHub</div>
+
+            <div class="skill">HTML</div>
+
+            <div class="skill">CSS</div>
+
+            <div class="skill">JavaScript</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+
+        <div class="section-title">
+            <h2>Experience</h2>
+            <p>Internship experience</p>
+        </div>
+
+        <div class="experience-container">
+
+            <!-- Sennova -->
+            <div class="experience-card">
+
+                <h3>Data Analyst Intern</h3>
+
+                <h4>Sennova</h4>
+
+                <p>
+                    <strong>Jan 05, 2026 – Apr 05, 2026</strong>
+                </p>
+
+                <p>
+                    Worked on data-related tasks involving data analysis,
+                    data preparation and gaining practical exposure to
+                    analytical tools and business data.
+                </p>
+
+            </div>
+
+
+            <!-- Foiwe -->
+            <div class="experience-card">
+
+                <h3>System Analyst (Moderation)</h3>
+
+                <h4>Foiwe Info Global Solutions</h4>
+
+                <p>
+                    <strong>Jun 14, 2025 – Jul 23, 2025</strong>
+                </p>
+
+                <p>
+                    Worked on backend management and content moderation
+                    activities for DAZN FIFA World Cup operations.
+                    Handled event information, regional content and
+                    moderation according to client guidelines.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>Projects</h2>
+
+            <p>
+                Data analytics and software projects
+            </p>
 
         </div>
 
 
-        <!-- PROJECT 2 -->
+        <div class="projects-container">
 
-        <div class="project">
 
-            <h3>Retail Sales Data Analysis</h3>
+            <!-- PROJECT 1 -->
+            <div class="project-card">
 
-            <p>
-                Performed exploratory data analysis on retail transaction
-                data using Python and SQL. Analyzed revenue, customers,
-                product categories and purchasing trends to support
-                business decision-making.
-            </p>
+                <div class="project-number">
+                    PROJECT 01
+                </div>
 
-            <div class="tech">
-                Python • Pandas • MySQL • Power BI
+                <h3>
+                    Supermarket Sales Analysis & Business Intelligence Dashboard
+                </h3>
+
+                <p>
+                    Analyzed supermarket sales data to identify revenue
+                    trends, product performance, customer behavior and
+                    business insights. Developed SQL analysis and an
+                    interactive Power BI dashboard for business reporting.
+                </p>
+
+                <div class="tech">
+
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>MySQL</span>
+                    <span>Power BI</span>
+                    <span>Excel</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/balasundar2005/supermarket-sales-analysis"
+                    target="_blank"
+                    class="project-link">
+
+                    View Project on GitHub
+
+                </a>
+
             </div>
 
-            <a href="https://github.com/balasundar2005/retail-sales-analysis"
-               target="_blank">
-                View Project
-            </a>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Retail Sales Data Analysis
+                </h3>
+
+                <p>
+                    Performed analysis on retail transaction data to
+                    understand sales performance, customer behavior,
+                    product categories and revenue trends. Used Python
+                    and MySQL to clean, analyze and extract meaningful
+                    business insights.
+                </p>
+
+                <div class="tech">
+
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>SQL</span>
+                    <span>MySQL</span>
+                    <span>Power BI</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/balasundar2005/retail-sales-analysis"
+                    target="_blank"
+                    class="project-link">
+
+                    View Project on GitHub
+
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    Smart Blood Donation & Matching System
+                </h3>
+
+                <p>
+                    Developed a web-based blood matching platform that
+                    helps users find nearby blood banks based on selected
+                    blood groups and availability. Designed to improve
+                    access to blood availability information.
+                </p>
+
+                <div class="tech">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>PostgreSQL</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/balasundar2005/blood-harmony-pro"
+                    target="_blank"
+                    class="project-link">
+
+                    View Project on GitHub
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <div class="section-title">
+
+            <h2>Education</h2>
+
+            <p>Academic background</p>
 
         </div>
 
 
-        <!-- PROJECT 3 -->
+        <div class="education-container">
 
-        <div class="project">
 
-            <h3>Blood Harmony</h3>
+            <div class="education-card">
 
-            <p>
-                A blood matching portal designed to help users find nearby
-                blood banks based on selected blood groups and availability.
-                The project focuses on improving access to blood availability
-                information.
-            </p>
+                <h3>
+                    Adhiyamaan College of Engineering
+                </h3>
 
-            <div class="tech">
-                React • Node.js • PostgreSQL • HTML • CSS
+                <p>
+                    Bachelor of Engineering
+                </p>
+
+                <p>
+                    2022 – 2026
+                </p>
+
+                <p>
+                    CGPA: 7.01
+                </p>
+
             </div>
 
-            <a href="https://github.com/balasundar2005/blood-harmony-pro"
-               target="_blank">
-                View Project
-            </a>
+
+            <div class="education-card">
+
+                <h3>Higher Secondary Certificate</h3>
+
+                <p>
+                    HSC – 82.5%
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>Secondary School Leaving Certificate</h3>
+
+                <p>
+                    SSLC – 97.2%
+                </p>
+
+            </div>
+
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- INTERNSHIP -->
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
 
-<section id="internship">
+        <div class="section-title">
 
-    <h2 class="section-title">Internship Experience</h2>
+            <h2>Contact Me</h2>
 
-    <div class="internship">
+            <p>
+                Let's connect and discuss opportunities.
+            </p>
 
-        <h3>Backend Management Intern</h3>
+        </div>
 
-        <p><strong>Foiwe Info Global Solutions</strong></p>
+
+        <div class="contact-info">
+
+            <p>
+                📧
+                <a href="mailto:balasundarsenthil@gmail.com">
+                    balasundarsenthil@gmail.com
+                </a>
+            </p>
+
+
+            <p>
+                📱
+                <a href="tel:+919080374685">
+                    +91 9080374685
+                </a>
+            </p>
+
+
+            <p>
+                💻
+                <a
+                    href="https://github.com/balasundar2005"
+                    target="_blank">
+
+                    github.com/balasundar2005
+
+                </a>
+            </p>
+
+
+            <p>
+                🔗
+                <a
+                    href="https://www.linkedin.com/in/balasundar-s-890669259"
+                    target="_blank">
+
+                    LinkedIn Profile
+
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
 
         <p>
-            Worked on backend management and content operations
-            related to DAZN FIFA World Cup activities.
+            © 2026 Bala Sundar. All Rights Reserved.
         </p>
 
-        <ul>
-            <li>Managed event information received from event managers.</li>
-            <li>Worked with Application Control Centre (ACC).</li>
-            <li>Handled Fanzone content for assigned live matches.</li>
-            <li>Worked with regional and language configurations.</li>
-            <li>Performed content moderation according to client guidelines.</li>
-        </ul>
+    </footer>
 
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-    <h2 class="section-title">Contact Me</h2>
-
-    <div class="contact">
-
-        <p>
-            Email:
-            <a href="mailto:balasundarsenthil@gmail.com">
-                balasundarsenthil@gmail.com
-            </a>
-        </p>
-
-        <p>
-            Phone:
-            <a href="tel:+919080374685">
-                +91 9080374685
-            </a>
-        </p>
-
-        <p>
-            LinkedIn:
-            <a href="https://www.linkedin.com/in/balasundar-s-890669259/"
-               target="_blank">
-                View LinkedIn Profile
-            </a>
-        </p>
-
-        <p>
-            GitHub:
-            <a href="https://github.com/balasundar2005"
-               target="_blank">
-                github.com/balasundar2005
-            </a>
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <p>
-        © 2026 Bala Sundar | Data Analyst Portfolio
-    </p>
-
-</footer>
 
 </body>
 </html>
