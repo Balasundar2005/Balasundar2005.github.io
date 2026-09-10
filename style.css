@@ -412,3 +412,168 @@ footer {
         padding: 70px 0;
     }
 }
+<!-- PROJECTS SECTION -->
+
+<section id="projects" class="projects-section">
+
+    <h2>My Projects</h2>
+    <p class="section-subtitle">Data Analysis & Development Projects</p>
+
+    <div class="projects-container">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+
+            <h3>Supermarket Sales Analysis</h3>
+
+            <p>
+                Analyzed supermarket sales data using SQL and Power BI
+                to identify revenue trends, customer behavior and
+                product performance.
+            </p>
+
+            <div class="project-tech">
+                Python | MySQL | Power BI
+            </div>
+
+            <a href="https://github.com/balasundar2005/supermarket-sales-analysis"
+               target="_blank"
+               class="project-btn">
+                View Project
+            </a>
+
+        </div>
+
+
+        <!-- Project 2 -->
+        <div class="project-card">
+
+            <h3>Retail Sales Data Analysis</h3>
+
+            <p>
+                Performed data analysis on retail transactions using
+                Python and SQL to identify sales trends, customer
+                insights and product performance.
+            </p>
+
+            <div class="project-tech">
+                Python | Pandas | MySQL | Power BI
+            </div>
+
+            <a href="https://github.com/balasundar2005/retail-sales-analysis"
+               target="_blank"
+               class="project-btn">
+                View Project
+            </a>
+
+        </div>
+
+
+        <!-- Project 3 -->
+        <div class="project-card">
+
+            <h3>Blood Harmony</h3>
+
+            <p>
+                Developed a blood matching portal that helps users
+                find nearby blood banks based on selected blood
+                groups and availability.
+            </p>
+
+            <div class="project-tech">
+                React | Node.js | PostgreSQL
+            </div>
+
+            <a href="https://github.com/balasundar2005/blood-harmony-pro"
+               target="_blank"
+               class="project-btn">
+                View Project
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+Add this CSS to your existing CSS, without removing your old CSS:
+
+/* PROJECTS */
+
+.projects-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.project-card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-card h3 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.project-tech {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.project-btn {
+    display: inline-block;
+    padding: 9px 18px;
+    background: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.project-btn:hover {
+    background: #0ea5e9;
+}
+
+@media (max-width: 900px) {
+    .projects-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
